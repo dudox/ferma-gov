@@ -370,7 +370,7 @@ demo = {
            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
            series: [
                {value: @json($ongoingValues), className: 'bar-info'},
-               {value: @json($completedValues), className: 'bar-success'}
+               {value: @json($completedValues), className: 'bar-success'},
                {value: @json($pendingValues), className: 'bar-warning'},
            ]
        };
