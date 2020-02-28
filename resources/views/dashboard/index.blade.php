@@ -99,7 +99,7 @@
                                         <td>{{$entry->location}}</td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Manage Entry" class="btn btn-info btn-simple btn-link">
-                                                <i class="fa fa-edit"></i>
+                                                {{-- <i class="fa fa-edit"></i> --}}
                                             </button>
                                         </td>
                                     </tr>
