@@ -15,12 +15,12 @@ class DamageScreensSeeder extends Seeder
         DB::table('damage_screens')->insert([
             [
                 'value' => "Welcome to the Federal Road Maintenance Monitoring Platform. \n Please select an option ",
-                'order' => 1,
+                'order' => 0,
                 'con' => 1,
             ],
             [
                 'value' => 'Please describe the location of the damage the best you can.',
-                'order' => 2,
+                'order' => 1,
                 'con' => 0,
             ],
         ]);

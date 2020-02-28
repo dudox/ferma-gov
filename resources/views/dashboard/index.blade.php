@@ -7,7 +7,6 @@
     $ongoingPercent = ($ongoing * 100) / $count;
     $pendingPercent = ($pending * 100) / $count;
 ?>
-{{-- {{dd($completedValues)}} --}}
 @extends('layouts.dashboard')
 @section('style')
     <style>
