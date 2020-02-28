@@ -77,6 +77,7 @@
                     <div class="legend">
                         <i class="fa fa-circle text-success"></i> Completed
                         <i class="fa fa-circle text-info"></i> Ongoing
+                        <i class="fa fa-circle text-warning"></i> Pending
                     </div>
                     <hr>
                     <div class="stats">
