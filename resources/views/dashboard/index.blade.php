@@ -7,6 +7,7 @@
     $ongoingPercent = ($ongoing * 100) / $count;
     $pendingPercent = ($pending * 100) / $count;
 ?>
+{{-- {{dd($completedValues)}} --}}
 @extends('layouts.dashboard')
 @section('style')
     <style>
@@ -26,6 +27,14 @@
             /* customize stroke width of the donut slices in CSS. Note that this property is already set in JavaScript and label positioning also relies on this. In the right situation though it can be very useful to style this property. You need to use !important to override the style attribute */
             fill: #1DC7EA  !important;
             /* create modern looking rounded donut charts */
+        }
+
+        .bar-success {
+            stroke: #87CB16 !important;
+        }
+
+        .bar-info {
+            stroke: #1DC7EA  !important;
         }
 </style>
 @endsection
@@ -356,8 +365,8 @@ demo = {
        var data = {
            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
            series: [
-               {value: [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895], className: 'info'},
-               {value: [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695], className: 'success'}
+               {value: @json($ongoingValues), className: 'bar-info'},
+               {value: @json($completedValues), className: 'bar-success'}
            ]
        };
 
