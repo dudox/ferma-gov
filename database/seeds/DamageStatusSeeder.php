@@ -31,12 +31,12 @@ class DamageStatusSeeder extends Seeder
                 'color_code' => 'text-success',
                 'icon' => 'nc nc-check-2',
             ],
-            [
-                'name' => 'Failed',
-                'description' => 'Damage Entry was not processed successfully',
-                'color_code' => 'text-danger',
-                'icon' => 'nc nc-simple-remove',
-            ],
+            // [
+            //     'name' => 'Failed',
+            //     'description' => 'Damage Entry was not processed successfully',
+            //     'color_code' => 'text-danger',
+            //     'icon' => 'nc nc-simple-remove',
+            // ],
         ]);
     }
 }
