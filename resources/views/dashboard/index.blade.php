@@ -36,6 +36,10 @@
         .bar-info {
             stroke: #1DC7EA  !important;
         }
+
+        .bar-warning {
+            stroke: #FF9500  !important;
+        }
 </style>
 @endsection
 @section('content')
@@ -367,6 +371,7 @@ demo = {
            series: [
                {value: @json($ongoingValues), className: 'bar-info'},
                {value: @json($completedValues), className: 'bar-success'}
+               {value: @json($pendingValues), className: 'bar-warning'},
            ]
        };
 
