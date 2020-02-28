@@ -30,8 +30,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
     });
 });
 
-Route::group(['prefix' => 'auth', 'middleware' => 'sendtodash'], function () {
-    Route::get('/login', 'Authentication@index')->name('login');
-    Route::post('/login', 'Authentication@login')->name('signin');
+Route::group(['prefix' => 'auth'], function () {
+    Route::group(['middleware' => 'sendtodash'], function () {
+        Route::get('/login', 'Authentication@index')->name('login');
+        Route::post('/login', 'Authentication@login')->name('signin');
+    });
     Route::get('/logout', 'Authentication@logout')->name('logout');
 });
