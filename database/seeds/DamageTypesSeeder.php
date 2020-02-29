@@ -14,15 +14,15 @@ class DamageTypesSeeder extends Seeder
     {
         DB::table('damage_types')->insert([
             [
-                'name' => 'Bad Federal Road Location, mention nearest down or village',
+                'name' => 'Enter Bad Federal Road Location, mention nearest down or village',
                 'description' => 'Damage occurs in the surface layer of the road, divided into 9 (nine) types of cracks are: hair cracking, alligator cracks, edge cracks, edge joint cracks, lane joint cracks, widening cracks, reflection cracks, shrinkage cracks, slippage cracks to cause varying among others could be because the soil road base is less stable, the surrounding drainage system is not good, the job execution procedure that is not good, not good paving material, which exceeds the load capacity of the road traffic and other causes'
             ],
             [
-                'name' => 'Bad Road Local Government ',
+                'name' => 'Enter Bad Road Local Government ',
                 'description' => 'Deformation caused by the carrying capacity of the foundation soil is not good and compaction layer or foundation that is not good, resulting in additional compaction by traffic load. Types and causes of distortion must be known to determine the appropriate type of repair.'
             ],
             [
-                'name' => 'Bad Road State',
+                'name' => 'Enter Bad Road State',
                 'description' => 'This damage is a defect on the surface of the pavement in the form of damage to roads perkersan layer mechanically and chemically. Forms of damage can be Potholes, raveling, stripping. The causes can vary because the drainage system is not good, weather influences, material that does not comply with the specification.'
             ],
             [
