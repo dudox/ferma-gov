@@ -50,7 +50,7 @@ class Process extends Controller
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end('Thank you for notifying us, agents will be dispatched to repair the reported damage');
+        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediate.\n Report more.");
         die;
     }
 
