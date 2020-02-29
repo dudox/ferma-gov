@@ -25,7 +25,7 @@
                                         <td>{{$count++}}</td>
                                         <td>{{$entry->location}}</td>
                                         <td>{{$entry->phone}}</td>
-                                        <td>{{$entry->degree->name ?? ''}}</td>
+                                        <td>{{$entry->degree->description ?? ''}}</td>
                                         <td class="{{$entry->progress->color_code ?? ''}}">
                                             <div class="legend">
                                                 <i class="fa fa-circle {{$entry->progress->color_code ?? ''}}"></i>{{$entry->progress->name ?? ''}}

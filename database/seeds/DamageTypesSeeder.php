@@ -14,20 +14,20 @@ class DamageTypesSeeder extends Seeder
     {
         DB::table('damage_types')->insert([
             [
-                'name' => 'Enter Bad Federal Road Location, mention nearest down or village',
-                'description' => 'Damage occurs in the surface layer of the road, divided into 9 (nine) types of cracks are: hair cracking, alligator cracks, edge cracks, edge joint cracks, lane joint cracks, widening cracks, reflection cracks, shrinkage cracks, slippage cracks to cause varying among others could be because the soil road base is less stable, the surrounding drainage system is not good, the job execution procedure that is not good, not good paving material, which exceeds the load capacity of the road traffic and other causes'
+                'name' => 'Enter Bad Federal Road Location, (mention nearest town or village)',
+                'description' => 'Bad Federal Road Location, (mention nearest town or village)'
             ],
             [
-                'name' => 'Enter Bad Road Local Government ',
-                'description' => 'Deformation caused by the carrying capacity of the foundation soil is not good and compaction layer or foundation that is not good, resulting in additional compaction by traffic load. Types and causes of distortion must be known to determine the appropriate type of repair.'
+                'name' => 'Enter Bad Road (Local Government)',
+                'description' => 'Bad Road (Local Government) .'
             ],
             [
-                'name' => 'Enter Bad Road State',
-                'description' => 'This damage is a defect on the surface of the pavement in the form of damage to roads perkersan layer mechanically and chemically. Forms of damage can be Potholes, raveling, stripping. The causes can vary because the drainage system is not good, weather influences, material that does not comply with the specification.'
+                'name' => 'Enter Bad Road (State)',
+                'description' => 'Bad Road (State).'
             ],
             [
                 'name' => 'Enter your full name for FERMA Marshal National Award Consideration',
-                'description' => 'The existence of polished aggregate causing slippery roads and dangerous for vehicle and driver through the lane. The cause of this damage is not a wear-resistant aggregate material to the wheels of vehicles, aggregates that are round or cubical shaped not slick. How to fix that with the closure of defective parts with the appropriate layer.'
+                'description' => 'FERMA Marshal National Award Consideration'
             ],
             // [
             //     'name' => 'Bleeding or flushing',
