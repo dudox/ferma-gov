@@ -18,7 +18,7 @@
   <link href="../assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet" />
 </head>
 
-<body class="bg-gradient-info">
+<body class="bg-gradient-primary">
   <div class="main-content py-5">
     <!-- Navbar -->
     <!-- Header -->
@@ -34,10 +34,10 @@
     </div>
 
     <!-- Page content -->
-    <div class="container mt--7">
+    <div class="container mt--6">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-7">
-          <div class="card bg-gradient-info" style="border: none;z-index: 10;">
+          <div class="card bg-primary" style="border: none;z-index: 10;">
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" method="POST" action="{{route('signin')}}">
                 @csrf
@@ -70,7 +70,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-white my-4 text-info">Sign in</button>
+                  <button type="submit" class="btn btn-white my-4 text-primary">Sign in</button>
                 </div>
               </form>
             </div>

@@ -17,7 +17,7 @@ class CreateDamageEntriesTable extends Migration
             $table->bigIncrements('id');
             $table->text('location');
             $table->string('phone');
-            $table->string('indentifier');
+            $table->string('identifier');
             $table->json('images')->nullable();
             $table->json('geolocation')->nullable();
             $table->integer('type');
