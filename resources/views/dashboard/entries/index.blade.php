@@ -12,8 +12,8 @@
                         <thead>
                             <th>ID</th>
                             <th>Location</th>
-                            <th>User</th>
-                            <th>Damage Degree</th>
+                            <th>User Phone</th>
+                            <th>User Name</th>
                             <th>Status</th>
                             <th>Change Status</th>
                         </thead>
@@ -25,7 +25,7 @@
                                         <td>{{$count++}}</td>
                                         <td>{{$entry->location}}</td>
                                         <td>{{$entry->phone}}</td>
-                                        <td>{{$entry->degree->description ?? ''}}</td>
+                                        <td>{{$entry->name ?? ''}}</td>
                                         <td class="{{$entry->progress->color_code ?? ''}}">
                                             <div class="legend">
                                                 <i class="fa fa-circle {{$entry->progress->color_code ?? ''}}"></i>{{$entry->progress->name ?? ''}}

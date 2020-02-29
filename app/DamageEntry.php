@@ -13,6 +13,7 @@ class DamageEntry extends Model
         'type',
         'status',
         'identifier',
+        'name',
     ];
 
     public function degree()

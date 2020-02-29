@@ -14,15 +14,15 @@ class DamageTypesSeeder extends Seeder
     {
         DB::table('damage_types')->insert([
             [
-                'name' => 'Enter Bad Federal Road Location, (mention nearest town or village)',
-                'description' => 'Bad Federal Road Location, (mention nearest town or village)'
+                'name' => 'Enter Bad Federal Road Location, mention nearest town or village ',
+                'description' => 'Bad Federal Road Location'
             ],
             [
-                'name' => 'Enter Bad Road (Local Government)',
-                'description' => 'Bad Road (Local Government) .'
+                'name' => 'Enter Bad Road Local Government ',
+                'description' => 'Local Government'
             ],
             [
-                'name' => 'Enter Bad Road (State)',
+                'name' => 'Enter Bad Road State',
                 'description' => 'Bad Road (State).'
             ],
             [

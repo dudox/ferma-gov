@@ -25,28 +25,26 @@ class Process extends Controller
 
     public function index()
     {
-        if($this->count === 1 && $this->present == null) {
-
+        if($this->count < 4 ) {
             echo $this->con($this->getOptions());
             die;
         }
 
         else {
-            if($this->count > 0 && $this->present !== null) {
-                if($this->count > DamageScreen::max('order')) {
-                    $this->storeInput();
-                }
-                echo $this->getStep();
+            if($this->count > DamageScreen::max('order')) {
+                $this->storeInput();
             }
+            echo $this->getStep();
+
         }
     }
 
     public function storeInput()
     {
         DamageEntry::create([
-            'location' => $this->text[1],
+            'location' => $this->text[0] . ', ' .$this->text[1] . ', ' . $this->text[2],
+            'name' => $this->text[3],
             'phone' => $this->phone,
-            'type' => $this->text[0],
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
@@ -56,14 +54,9 @@ class Process extends Controller
 
     public function getOptions()
     {
-        $screens = DamageType::all();
+        if($this->count == 1 && $this->present == null) return DamageScreen::where('order', 0)->first()->value . "\n" . DamageType::find($this->count)->name;;
 
-        $response = "Welcome, please select an option.\n";
-        foreach ($screens as $key => $value) {
-            $step = $key + 1;
-            $response = $response . $step . ". " . $value->name . ".\n";
-        }
-        return $response;
+        return DamageType::find($this->count + 1)->name;
     }
 
     public function getStep()
