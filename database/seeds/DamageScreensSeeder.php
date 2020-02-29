@@ -14,7 +14,7 @@ class DamageScreensSeeder extends Seeder
     {
         DB::table('damage_screens')->insert([
             [
-                'value' => "Welcome to FERMA Bad Roads iReporter Platform ",
+                'value' => "Welcome to FERMA Bad Road iReporter Platform ",
                 'order' => 0,
                 'con' => 1,
             ],
