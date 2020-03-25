@@ -81,7 +81,7 @@
             <div class="card ">
                 <div class="card-header ">
                     <h4 class="card-title">Repair Statistics</h4>
-                    <p class="card-category">Repair Performance Over time</p>
+                    <p class="card-category">Repair Performance</p>
                 </div>
                 <div class="card-body ">
                     <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
