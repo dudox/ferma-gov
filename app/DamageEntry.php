@@ -3,10 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Concerns\Filterable;
 
 class DamageEntry extends Model
 {
-    //
+    use Filterable;
+
     protected $fillable = [
         'location',
         'phone',

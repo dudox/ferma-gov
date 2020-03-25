@@ -1,11 +1,27 @@
 <?php
     $count = $entries->count();
-    $completed = $entries->where('status', 3)->count();
-    $ongoing = $entries->where('status', 2)->count();
-    $pending = $entries->where('status', 1)->count();
-    $completedPercent = ($completed * 100) / $count;
-    $ongoingPercent = ($ongoing * 100) / $count;
-    $pendingPercent = ($pending * 100) / $count;
+    $completed = $comp->where('status', 3)->count();
+    $ongoing = $ong->where('status', 2)->count();
+    $pending = $pend->where('status', 1)->count();
+    if($completed > 0) {
+        $completedPercent = ($completed * 100) / $count;
+    }
+    else {
+        $completedPercent = 0;
+    }
+    if($completed > 0) {
+        $ongoingPercent = ($ongoing * 100) / $count;
+    }
+    else {
+        $ongoingPercent = 0;
+    }
+    if($completed > 0) {
+        $pendingPercent = ($pending * 100) / $count;
+    }
+    else {
+        $pendingPercent = 0;
+    }
+
 ?>
 @extends('layouts.dashboard')
 @section('style')
@@ -43,6 +59,24 @@
 @endsection
 @section('content')
     <div class="row">
+        <div class="col-lg-4"> </div>
+        <form class="col-lg-6 form-inline">
+            <select class="form-control" name="year" required>
+                <option value=''>
+                    Select Year to Filter
+                </option>
+                @foreach($years as $y)
+                    <option value={{$y}}>
+                        {{$y}}
+                    </option>
+                @endforeach
+            </select>
+            <button style="margin-left:2em;" type="submit" class="btn btn-primary"> Filter </button>
+        </form>
+    </div>
+    <br />
+    <br />
+    <div class="row">
         <div class="col-md-4">
             <div class="card ">
                 <div class="card-header ">
@@ -52,9 +86,9 @@
                 <div class="card-body ">
                     <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
                     <div class="legend">
-                        <i class="fa fa-circle text-warning"></i> Pending
-                        <i class="fa fa-circle text-info"></i> Ongoing
-                        <i class="fa fa-circle text-success"></i> Completed
+                        <i class="fa fa-circle text-warning"></i> Pending ({{number_format($pending, 0)}})
+                        <i class="fa fa-circle text-info"></i> Ongoing ({{number_format($ongoing, 0)}})
+                        <i class="fa fa-circle text-success"></i> Completed ({{number_format($completed, 0)}})
                     </div>
                     <hr>
                     <div class="stats">
@@ -66,7 +100,7 @@
         <div class="col-md-8">
             <div class="card ">
                 <div class="card-header ">
-                    <h4 class="card-title">Total Repairs</h4>
+                    <h4 class="card-title">Total Repairs ({{number_format(($completed + $ongoing + $pending), 0)}})</h4>
                     <p class="card-category">All Repairs Completed And ongoing</p>
                 </div>
                 <div class="card-body ">
@@ -74,9 +108,9 @@
                 </div>
                 <div class="card-footer ">
                     <div class="legend">
-                        <i class="fa fa-circle text-success"></i> Completed
-                        <i class="fa fa-circle text-info"></i> Ongoing
-                        <i class="fa fa-circle text-warning"></i> Pending
+                        <i class="fa fa-circle text-success"></i> Completed ({{number_format($completed, 0)}})
+                        <i class="fa fa-circle text-info"></i> Ongoing ({{number_format($ongoing, 0)}})
+                        <i class="fa fa-circle text-warning"></i> Pending ({{number_format($pending, 0)}})
                     </div>
                     <hr>
                     <div class="stats">
@@ -101,7 +135,8 @@
                                 <?php
                                     $counter = 1;
                                     $latest = $entries->orderBy('created_at', 'DESC')->take(5);
-                                 ?>
+                                ?>
+
                                 @foreach ($latest->get() as $entry)
                                     <tr>
                                         <td>
@@ -124,7 +159,7 @@
                 <div class="card-footer ">
                     <hr>
                     <div class="stats">
-                        <i class="now-ui-icons loader_refresh spin"></i> Last Updated at {{date("D, d M Y h:i A", strtotime($latest->first()->created_at)) ?? ''}}
+                        @if($latest->first())<i class="now-ui-icons loader_refresh spin"></i> Last Updated at {{date("D, d M Y h:i A", strtotime($latest->first()->created_at)) ?? ''}}@endif
                     </div>
                 </div>
             </div>
