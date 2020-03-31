@@ -7,6 +7,12 @@
                     <h4 class="card-title">Damage Entries</h4>
                     <p class="card-category">All Damages Reported</p>
                 </div>
+                <form class="form-inline" method="POST" action="{{route('entries.clear')}}">
+                    @csrf
+                    @method('DELETE')
+                    <input class="form-control" style="margin-left: 1em;" placeholder="input 'confirm' to proceed" name="confirm" required/>
+                    <button class="btn btn-danger" style="margin-left: 1em;"> Clear Records </button>
+                </form>
                 <div class="card-body table-full-width table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>

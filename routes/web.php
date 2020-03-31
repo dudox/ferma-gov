@@ -26,6 +26,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
         Route::get('/', 'DamageEntryController@index')->name('entries');
         Route::get('/{damageEntry}', 'DamageEntryController@show')->name('entries.show');
         Route::post('/{damageEntry}', 'DamageEntryController@update')->name('entries.update');
+        Route::delete('/', 'DamageEntryController@destroy')->name('entries.clear');
 
     });
 });

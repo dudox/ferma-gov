@@ -78,13 +78,16 @@ class DamageEntryController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove all entries.
      *
      * @param  \App\DamageEntry  $damageEntry
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DamageEntry $damageEntry)
+    public function destroy(Request $request)
     {
         //
+        if(!$request->confirm || $request->confirm !== 'confirm') return back()->with('error', 'Please Confirm Request');
+        DamageEntry::whereNotNull('id')->delete();
+        return back()->with('success', 'Records Cleared Successfully!!');
     }
 }
