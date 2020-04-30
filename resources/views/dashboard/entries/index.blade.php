@@ -6,7 +6,13 @@
                 <div class="card-header ">
                     <h4 class="card-title">Damage Entries</h4>
                     <p class="card-category">All Damages Reported</p>
+                    @if(session('success'))
+                        <p class="text-success"> {{session('success')}} </p>
+                    @elseif(session('error'))
+                        <p class="text-danger"> {{session('error')}} </p>
+                    @endif
                 </div>
+
                 <form class="form-inline" method="POST" action="{{route('entries.clear')}}">
                     @csrf
                     @method('DELETE')
