@@ -402,7 +402,7 @@ demo = {
        // lbd.startAnimationForLineChart(chartHours);
 
        var data = {
-           labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+           labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
            series: [
                {value: @json($ongoingValues), className: 'bar-info'},
                {value: @json($completedValues), className: 'bar-success'},
