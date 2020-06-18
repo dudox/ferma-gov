@@ -12,6 +12,7 @@ class Dashboard extends Controller
     //
     public function index(FilterDamage $filter)
     {
+        $entry_overall = DamageEntry::with('degree','progress')->get();
         $pendingValues = [];
         $ongoingValues = [];
         $completedValues = [];
@@ -56,14 +57,6 @@ class Dashboard extends Controller
             }
         }
 
-        return view('dashboard.index')
-        ->with('entries', $entries)
-        ->with('ong', $ong)
-        ->with('comp', $comp)
-        ->with('pend', $pend)
-        ->with('years', $array)
-        ->with('pendingValues', $pendingValues)
-        ->with('ongoingValues', $ongoingValues)
-        ->with('completedValues', $completedValues);
+        return view('dashboard.index',compact('entry_overall'));
     }
 }

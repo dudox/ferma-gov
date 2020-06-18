@@ -10,10 +10,13 @@ var KTLogin = function() {
             var o;
             t = $("#kt_login"), o = FormValidation.formValidation(KTUtil.getById("kt_login_signin_form"), {
                     fields: {
-                        username: {
+                        email: {
                             validators: {
                                 notEmpty: {
                                     message: "E-mail address is required"
+                                },
+                                emailAddress: {
+                                    message: "E-mail address is invalid"
                                 }
                             }
                         },
@@ -28,24 +31,22 @@ var KTLogin = function() {
                     plugins: {
                         trigger: new FormValidation.plugins.Trigger,
                         submitButton: new FormValidation.plugins.SubmitButton,
-                        bootstrap: new FormValidation.plugins.Bootstrap
+                        bootstrap: new FormValidation.plugins.Bootstrap,
+                        defaultSubmit: new FormValidation.plugins.DefaultSubmit(),
+
+
                     }
                 }), $("#kt_login_signin_submit").on("click", function(t) {
                     t.preventDefault(), o.validate().then(function(t) {
-                        $("#kt_login_signin_submit").submit();
-                        "Valid" == t ? swal.fire({
-                            text: "All is cool! Now you submit this form",
-                            icon: "success",
-                            buttonsStyling: !1,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn font-weight-bold btn-light-primary"
-                            }
 
+                        "Valid" == t ?
+                        // ajax start
 
-                        }).then(function() {
-                            KTUtil.scrollTop()
-                        }) : swal.fire({
+                            $("#kt_login_signin_form").submit()
+
+                        //ajax ends
+
+                        : swal.fire({
                             text: "Sorry, looks like there are some errors detected, please try again.",
                             icon: "error",
                             buttonsStyling: !1,

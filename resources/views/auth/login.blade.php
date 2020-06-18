@@ -5,7 +5,7 @@
     <!--begin::Head-->
     <head>
         <meta charset="utf-8"/>
-        <title>Metronic | Login Page 3</title>
+        <title>{{env('APP_NAME')}} | Login</title>
         <meta name="description" content="Login page example"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -111,7 +111,12 @@
                 <form class="form" id="kt_login_signin_form" role="form" method="POST" action="{{route('signin')}}">
                     @csrf
 					<div class="form-group">
-						<input class="form-control h-auto text-white placeholder-white  bg-dark-o-70  border-0 py-4 px-8 mb-2" type="email" placeholder="Email" name="email" autocomplete="off"/>
+                        <input class="form-control h-auto text-white placeholder-white  bg-dark-o-70  border-0 py-4 px-8 mb-2" type="email" placeholder="Email" name="email" autocomplete="off"/>
+                        @if ($errors->has('email'))
+                            <span class="invalid-feedback text-danger" role="alert">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
 					</div>
 					<div class="form-group">
 						<input class="form-control h-auto text-white placeholder-white  bg-dark-o-70  border-0 py-4 px-8 mb-2" type="password" placeholder="Password" name="password"/>
@@ -127,7 +132,7 @@
 						<a href="javascript:;" id="kt_login_forgot" class="text-white font-weight-bold">Forget Password ?</a>
 					</div>
 					<div class="form-group text-center mt-5 ">
-						<button id="kt_login_signin_submit" class="btn btn-block btn-outline-white font-weight-bold opacity-90 py-3">Sign In</button>
+						<button id="kt_login_signin_submit" type="submit" class="btn btn-block btn-outline-white font-weight-bold opacity-90 py-3">Sign In</button>
 					</div>
 				</form>
 			</div>
@@ -142,7 +147,7 @@
 <!--end::Login-->
     </div>
     <div class="position-absolute bottom-0 text-center w-100 py-3">
-        <a href="#" class="text-white text-center font-size-h5">&copy; Copyright Smart Sahara</a>
+        <a href="#" class="text-white text-center small">&copy; Copyright Smart Sahara</a>
     </div>
 <!--end::Main-->
 
