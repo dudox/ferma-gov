@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class road extends Model
+class Road extends Model
 {
     protected $table = "roads";
     public function local(){

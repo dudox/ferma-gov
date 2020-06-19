@@ -1,5 +1,6 @@
 <?php
 
+use App\Road;
 use Illuminate\Database\Seeder;
 
 class RoadSeeder extends Seeder
@@ -63,5 +64,8 @@ class RoadSeeder extends Seeder
             ],
 
         ];
+        foreach($roads as $road){
+            Road::create($road);
+        }
     }
 }
