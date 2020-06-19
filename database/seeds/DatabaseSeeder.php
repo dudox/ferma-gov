@@ -1,5 +1,6 @@
 <?php
 
+use App\GeoRegions;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
             DamageStatusSeeder::class,
             DamageEntriesSeeder::class,
             DamageScreensSeeder::class,
+            GeoRegionsSeeder::class
         ]);
     }
 }

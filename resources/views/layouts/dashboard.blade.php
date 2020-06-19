@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/animate.css')}}" />
+
 
     <link href="{{asset('dash/css/calendar.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dash/css/bootstrap.min.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
@@ -1813,6 +1815,13 @@
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.5"></script>
 
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/js/pages/widgets.js?v=7.0.5"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>
+       $(function(){
+            new WOW().init();
+         });
+    </script>
+    @yield('scripts')
 </body>
 
 </html>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DamageEntry;
+use App\GeoRegions;
 use App\Http\Filters\FilterDamage;
+use GeoRegionsSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -57,6 +59,12 @@ class Dashboard extends Controller
             }
         }
 
-        return view('dashboard.index',compact('entry_overall'));
+        $zones = $this->list_geo_zones();
+
+        return view('dashboard.index',compact('entry_overall','zones'));
+    }
+
+    function list_geo_zones(){
+        return GeoRegions::with('states.locals')->get();
     }
 }

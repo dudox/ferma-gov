@@ -54,7 +54,8 @@ class Process extends Controller
 
     public function getOptions()
     {
-        if($this->count == 1 && $this->present == null) return DamageScreen::where('order', 0)->first()->value . "\n\n" . DamageType::find($this->count)->name;;
+        if($this->count == 1 && $this->present == null)
+            return DamageScreen::where('order', 0)->first()->value . "\n\n" . DamageType::find($this->count)->name;;
 
         return DamageType::find($this->count + 1)->name;
     }
