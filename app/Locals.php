@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Locals extends Model
 {
     protected $table = "locals";
+    public function roads(){
+        return $this->hasMany(Road::class);
+    }
 }

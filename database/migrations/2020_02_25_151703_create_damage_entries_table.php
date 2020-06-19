@@ -18,8 +18,8 @@ class CreateDamageEntriesTable extends Migration
             $table->text('location');
             $table->string('phone');
             $table->string('identifier');
-            $table->json('images')->nullable();
-            $table->json('geolocation')->nullable();
+            $table->string('images')->nullable();
+            $table->string('geolocation')->nullable();
             $table->string('name');
             $table->integer('status')->default(1);
             $table->timestamps();
