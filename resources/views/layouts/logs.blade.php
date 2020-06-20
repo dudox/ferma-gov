@@ -12,6 +12,8 @@
                         <th>ID</th>
                         <th>User</th>
                         <th>Date and time</th>
+                        <th>IP Address</th>
+                        <th>Location</th>
                         <th>Activity</th>                                          
                     </tr>
                 </thead>   
@@ -21,8 +23,10 @@
                         @foreach($logs as $log)
                             <tr >
                                 <td>{{$count++}}</td>
-                                <td>{{ $log->user_id}}</td>
-                                <td>{{ $log->created_at }}</td>                                
+                                <td>{{$log->user_id}}</td>
+                                <td>{{$log->created_at }}</td>  
+                                <td>{{$log->ip_address}}</td>
+                                <td>{{$log->position}}</td>                           
                                 <td><span class="label label-inline {{($log->activity=="user logged in") ? "label-success" : "label-warning" }}">{{$log->activity}}</span></td> 
                             </tr>
                         @endforeach
