@@ -30,7 +30,7 @@ class Dashboard extends Controller
         return DamageEntry::with('roads.progress','states')->orderBy('id','DESC')->get()->take(7);
     }
 
-    public function reports_percentile($){
-        Road::where('')->count;
-    }
+    // public function reports_percentile($){
+    //     Road::where('')->count;
+    // }
 }
