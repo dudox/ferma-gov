@@ -33,6 +33,7 @@ class Authentication extends Controller
         Log::create([
             'user_id'=>auth()->user()->id,
             'activity'=> "user logged out",
+            'ip_address' => \Request::ip(),
         ]);
         Auth::logout();
         return redirect()->route('login');
