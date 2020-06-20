@@ -6,6 +6,9 @@ use App\DamageEntry;
 use App\DamageScreen;
 use App\DamageType;
 use App\Http\Controllers\Controller;
+use App\Locals;
+use App\Road;
+use App\States;
 use Illuminate\Http\Request;
 
 class Process extends Controller
@@ -17,6 +20,10 @@ class Process extends Controller
     public $sessionId;
     public $serviceCode;
     public $screen;
+    public $state;
+    public $local;
+    public $road;
+    public $zone;
 
     public function __construct()
     {
@@ -25,24 +32,21 @@ class Process extends Controller
 
     public function index()
     {
-        if($this->count < 4 ) {
-            echo $this->con($this->getOptions());
+        if($this->count < 10 ) {
+            echo $this->getOptions();
             die;
         }
 
-        else {
-            if($this->count > DamageScreen::max('order')) {
-                $this->storeInput();
-            }
-            echo $this->getStep();
 
-        }
     }
 
     public function storeInput()
     {
         DamageEntry::create([
-            'location' => $this->text[0] . ', ' .$this->text[1] . ', ' . $this->text[2],
+            'zone_id' =>$this->setStates()[2],
+            'state_id'=>$this->setStates()[0],
+            'local_id'=>$this->setLocals()[0],
+            'road_id'=>$this->setRoads()[0],
             'name' => $this->text[3],
             'phone' => $this->phone,
             'status' => 1,
@@ -55,9 +59,38 @@ class Process extends Controller
     public function getOptions()
     {
         if($this->count == 1 && $this->present == null)
-            return DamageScreen::where('order', 0)->first()->value . "\n\n" . DamageType::find($this->count)->name;;
+            return $this->con(DamageScreen::where('order', 0)->first()->value . "\n\n" . DamageType::find($this->count)->name);
 
-        return DamageType::find($this->count + 1)->name;
+        if($this->count == 1 && $this->present == $this->text[0])
+            return $this->getStates();
+
+        if($this->count == 2 && $this->present == $this->text[1])
+            if($this->setStates()[1] == $this->text[1]){
+                echo $this->con("Enter the first letter of your local govt");
+            } else {
+                echo $this->end("Invalid state selection, please try again");
+            }
+
+
+        if($this->count == 3 && $this->present == $this->text[2])
+
+             echo $this->getLocals($this->setStates()[0]);
+
+        if($this->count == 4 && $this->present == $this->text[3])
+            echo $this->getRoads($this->setLocals()[0]);
+            // var_dump($this->setLocals());
+
+        if($this->count ==5 && $this->present == $this->text[4])
+            $this->storeInput();
+
+
+
+
+
+
+
+
+        //return DamageType::find($this->count + 1)->name;
     }
 
     public function getStep()
@@ -67,6 +100,86 @@ class Process extends Controller
 
         return $this->con($this->screen->value);
         die;
+    }
+
+    public function getStates(){
+        $states = States::where('name', 'LIKE', $this->text[0].'%')->get();
+        if(count($states) == 0){
+            return $this->end("No states that starts with ".$this->text[0]);
+        }
+        $res = "Please select your state\n\n";
+        foreach($states as $key => $state){
+            $key++;
+            $res .= $key." ".$state->name."\n";
+        }
+        return $this->con($res);
+    }
+
+    public function setStates(){
+        $states = States::where('name', 'LIKE', $this->text[0].'%')->get();
+
+        foreach($states as $key => $state){
+            $key++;
+            if($key == $this->text[1]){
+                $id = $state->state_id;
+                return array($id,$key,$state->zone_id);
+
+            }
+        }
+    }
+
+    public function getLocals($id){
+        $locals = Locals::where('local_name', 'LIKE', $this->text[2].'%')->where('state_id','=',$id)->get();
+        if(count($locals) == 0){
+            return $this->end("No local govt found");
+        } else {
+            $res = "Please select your local govt\n\n";
+            foreach($locals as $key => $local){
+                $key++;
+                $res .= $key." ".$local->local_name."\n";
+            }
+            return $res;
+        }
+
+    }
+
+    public function setLocals(){
+        $locals = Locals::where('local_name', 'LIKE', $this->text[2].'%')->where('state_id','=',$this->setStates()[0])->get();
+
+        foreach($locals as $key => $local){
+             //echo $local;
+            $key++;
+            if($key == $this->text[3]){
+                $state = $local->local_id;
+                return array($state,$key);
+
+            }
+        }
+
+    }
+
+    public function getRoads($id){
+        $roads = Road::where('local_id',$id)->get();
+        $res = "Please select the federal road you want to report\n\n";
+        foreach($roads as $key => $road){
+            $key++;
+            $res .= $key." ".$road->name."\n";
+        }
+        return $res;
+    }
+
+    public function setRoads(){
+        $roads = Road::where('local_id',$this->setLocals()[0])->get();
+
+        foreach($roads as $key => $road){
+            $key++;
+            if($key == $this->text[4]){
+                $state = $road->id;
+                return array($state,$key);
+
+            }
+        }
+
     }
 
     public function setter()

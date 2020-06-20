@@ -1,0 +1,14 @@
+.chart1 {
+    background: url('../../dash/img/bg/03.png') !important;
+
+}
+
+.chartlayer {
+    background-color: #36b883 !important;
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    opacity: .9;
+}

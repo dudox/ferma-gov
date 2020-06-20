@@ -15,7 +15,10 @@ class CreateDamageEntriesTable extends Migration
     {
         Schema::create('damage_entries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('location');
+            $table->bigInteger('zone_id');
+            $table->bigInteger('state_id');
+            $table->bigInteger('local_id');
+            $table->bigInteger('road_id');
             $table->string('phone');
             $table->string('identifier');
             $table->string('images')->nullable();

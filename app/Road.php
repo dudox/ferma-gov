@@ -10,4 +10,15 @@ class Road extends Model
     public function local(){
         return $this->belongsTo(Locals::class);
     }
+
+    public function degree()
+    {
+        return $this->hasOne(DamageType::class, 'id', 'type');
+    }
+    public function progress()
+    {
+        return $this->hasOne(DamageStatus::class, 'id', 'status');
+    }
+
+
 }

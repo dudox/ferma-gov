@@ -16,20 +16,20 @@ class DamageStatusSeeder extends Seeder
             [
                 'name' => 'Pending',
                 'description' => 'Damage Entry yet to be processed',
-                'color_code' => 'text-warning',
-                'icon' => 'nc nc-circle',
+                'color_code' => 'warning',
+                'icon' => 'fa fa-circle',
             ],
             [
                 'name' => 'Ongoing',
                 'description' => 'Damage Entry is been processed and repair is ongoing',
-                'color_code' => 'text-info',
-                'icon' => 'nc nc-spaceship',
+                'color_code' => 'info',
+                'icon' => 'fa fa-spaceship',
             ],
             [
                 'name' => 'Completed',
                 'description' => 'Damage Entry has been processed successfully',
-                'color_code' => 'text-success',
-                'icon' => 'nc nc-check-2',
+                'color_code' => 'success',
+                'icon' => 'fa fa-check-2',
             ],
             // [
             //     'name' => 'Failed',

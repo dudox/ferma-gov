@@ -10,7 +10,10 @@ class DamageEntry extends Model
     use Filterable;
 
     protected $fillable = [
-        'location',
+        'zone_id',
+        'state_id',
+        'local_id',
+        'road_id',
         'phone',
         'type',
         'status',
@@ -18,12 +21,17 @@ class DamageEntry extends Model
         'name',
     ];
 
-    public function degree()
+    public function roads()
     {
-        return $this->hasOne(DamageType::class, 'id', 'type');
+        return $this->hasOne(Road::class, 'id', 'road_id');
     }
     public function progress()
     {
         return $this->hasOne(DamageStatus::class, 'id', 'status');
+    }
+
+    public function states()
+    {
+        return $this->hasOne(States::class,'state_id','state_id');
     }
 }

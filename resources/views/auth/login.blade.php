@@ -46,6 +46,26 @@
             padding: 0% !important;
         }
 
+        .background {
+            background: url('../dash/img/bg/02.jpg') !important;
+            position: relative !important;
+            height: 100% !important;
+            width: 100%;
+        }
+
+        .layer {
+            background-color: #36b883;
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+        }
+
+
+
+
         #slidecaption {
             -webkit-animation-name: spinner;
             -webkit-animation-timing-function: linear;
@@ -90,13 +110,13 @@
     </style>
 
     <!--begin::Body-->
-    <body  id="kt_body"  class="header-fixed header-mobile-fixed subheader-enabled page-loading"  >
-
+    <body  id="kt_body"  class="header-fixed header-mobile-fixed subheader-enabled page-loading "  >
+        <div class="background ">
     	<!--begin::Main-->
-	<div class="d-flex flex-column flex-root">
+	<div class="d-flex flex-column flex-root layer">
 		<!--begin::Login-->
-<div class="login login-3 login-signin-on d-flex flex-row-fluid" id="kt_login">
-	<div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background: #36b883;">
+<div class="login login-3 login-signin-on d-flex flex-row-fluid" id="kt_login" style="opacity: 1 !important;">
+	<div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" >
 		<div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 			<!--begin::Login Header-->
 			<div class="d-flex flex-center mb-15">
@@ -150,6 +170,7 @@
         <a href="#" class="text-white text-center small">&copy; Copyright Smart Sahara</a>
     </div>
 <!--end::Main-->
+</div>
 
 
         <script>var HOST_URL = "/metronic/tools/preview";</script>

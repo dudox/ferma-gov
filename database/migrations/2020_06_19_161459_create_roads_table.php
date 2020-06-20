@@ -17,6 +17,7 @@ class CreateRoadsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('local_id');
             $table->string('name');
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }

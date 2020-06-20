@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/animate.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/animate.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('dash/css/fancy.css')}}" />
 
 
     <link href="{{asset('dash/css/calendar.css')}}" rel="stylesheet" type="text/css" />

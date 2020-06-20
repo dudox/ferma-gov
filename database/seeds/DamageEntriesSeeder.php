@@ -14,7 +14,10 @@ class DamageEntriesSeeder extends Seeder
     {
         DB::table('damage_entries')->insert([
             [
-                'location' => 'Garatu Village, Minna-Bida Road, Niger State',
+                'zone_id' => '1',
+                'state_id'=>'15',
+                'local_id'=>'266',
+                'road_id'=>'3',
                 'name' => 'Gideon Sunday',
                 'phone' => '2349012345678',
                 'identifier' => rand(111111111, 999999999),
@@ -22,7 +25,10 @@ class DamageEntriesSeeder extends Seeder
                 'created_at' => Carbon\Carbon::now(),
             ],
             [
-                'location' => 'Dama, Minna-Bida Road, Niger State',
+                'zone_id' => '1',
+                'state_id'=>'15',
+                'local_id'=>'263',
+                'road_id'=>'2',
                 'name' => 'Bajomo David',
                 'phone' => '2349012345678',
                 'identifier' => rand(111111111, 999999999),
@@ -30,7 +36,10 @@ class DamageEntriesSeeder extends Seeder
                 'created_at' => Carbon\Carbon::now(),
             ],
             [
-                'location' => 'Gurara, Minna, Niger State',
+                'zone_id' => '1',
+                'state_id'=>'15',
+                'local_id'=>'266',
+                'road_id'=>'5',
                 'name' => 'Michael Andrew',
                 'phone' => '2349012345678',
                 'identifier' => rand(111111111, 999999999),
