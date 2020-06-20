@@ -47,7 +47,8 @@
         }
 
         .background {
-            background: url('../dash/img/bg/02.jpg') !important;
+            background: url('../dash/img/bg/01.jpg') !important;
+            background-size: cover !important;
             position: relative !important;
             height: 100% !important;
             width: 100%;
