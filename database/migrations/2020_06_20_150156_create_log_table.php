@@ -18,6 +18,7 @@ class CreateLogTable extends Migration
             $table->string('user_id');
             $table->string('activity');
             $table->string('ip_address');
+            $table->string('position');
             $table->timestamps();
         });
     }
