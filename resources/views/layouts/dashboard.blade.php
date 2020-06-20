@@ -1815,7 +1815,7 @@
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/js/scripts.bundle.js?v=7.0.5"></script>
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.5"></script>
 
-    <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/js/pages/widgets.js?v=7.0.5"></script>
+    <script src="{{asset('dash/js/apex.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     <script>
        $(function(){

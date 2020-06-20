@@ -24,7 +24,7 @@
                         <!--begin::Body-->
                         <div class="card-body p-0 d-flex flex-column">
                             <!--begin::Items-->
-                            <div class="flex-grow-1 card-spacer">
+                            <div class="flex-grow-1 card-spacer mb-0 pb-0">
                                 <div class="row row-paddingless mt-5 mb-10">
                                     <!--begin::Item-->
                                     <div class="col">
@@ -138,7 +138,9 @@
                             <!--end::Items-->
 
                             <!--begin::Chart-->
-                            <div id="kt_mixed_widget_17_chart" class="card-rounded-bottom" data-color="primary" style="height: 200px"></div>
+                            <div class="bg-primary py-0 my-0">
+                                <div id="kt_mixed_widget_reports_chart" style="height: 200px"></div>
+                            </div>
                             <!--end::Chart-->
                         </div>
                         <!--end::Body-->
@@ -173,7 +175,7 @@
                                 <?php $count++;
                                 $delay = ($count  / 5 );
                                 ?>
-                                <div class="timeline timeline-5 mt-5 slideInRight wow" data-wow-duration=".50s" data-wow-delay="{{$delay}}s">
+                                <div class="timeline timeline-5 mb-3 slideInRight wow" data-wow-duration=".50s" data-wow-delay="{{$delay}}s">
                                     <!--begin::Item-->
                                     <div class="timeline-item align-items-start">
                                         <!--begin::Label-->
@@ -189,7 +191,8 @@
                                         <!--begin::Text-->
                                         <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">
                                             <span class="font-weight-bolder text-link  d-block small"><i class="fa fa-sm fa-user"></i> {{$entry->phone}}</span>
-                                            <span class="font-weight-bolder text-dark-75 font-size-lg">{{ucfirst($entry->roads->name)}}, {{$entry->states->name}}</span>
+                                            <span class="font-weight-bolder text-dark-75 small">{{ucfirst($entry->roads->name)}}, {{$entry->states->name}}</span>
+                                            <span class="small d-block">{{$entry->roads->progress->description}}</span>
                                         </div>
                                         <!--end::Text-->
                                     </div>
@@ -1755,5 +1758,5 @@
 </div>
 @endsection
 @section('scripts')
-<script src="{{asset('dash/js/charts/dashboard/traffic.js')}}" type="text/javascript"></script>
+<script src="{{asset('dash/js/charts/reports/index.js')}}" type="text/javascript"></script>
 @endsection

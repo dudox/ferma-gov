@@ -27,6 +27,10 @@ class Dashboard extends Controller
     }
 
     function list_recent_reports(){
-        return DamageEntry::with('roads.progress','states')->orderBy('id','DESC')->get()->take(6);
+        return DamageEntry::with('roads.progress','states')->orderBy('id','DESC')->get()->take(7);
+    }
+
+    public function reports_percentile($){
+        Road::where('')->count;
     }
 }
