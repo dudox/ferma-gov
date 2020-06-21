@@ -23,7 +23,7 @@ class Authentication extends Controller
                 'user_id'=>auth()->user()->id,
                 'activity'=> "user logged in",
                 'ip_address' => \Request::ip(),
-                'position' => $place->regionName. ", " .$place->countryName,
+                'position' => $place->cityName. ", " .$place->countryName,
             ]);
             return redirect()->route('dashboard');
         }
