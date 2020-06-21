@@ -1698,7 +1698,7 @@
                 </a>
 
                 <!--begin::Item-->
-                <a href="{{url('/logs')}}" class="navi-item">
+                <a href="{{route('logs')}}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">

@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function () {
     Route::get('/', 'Dashboard@index')->name('dashboard');
+    Route::get('logs', 'LogsController@index')->name('logs');
     Route::group(['prefix' => 'screens'], function () {
         Route::get('/', 'DamageScreenController@index')->name('screens');
         Route::post('/update', 'DamageScreenController@update')->name('screens.update');
@@ -42,4 +43,3 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('/logout', 'Authentication@logout')->name('logout');
 });
 
-Route::get('logs', 'LogsController@index')->middleware('auth');

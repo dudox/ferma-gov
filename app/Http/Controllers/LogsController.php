@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class LogsController extends Controller
 {
     public function index(){
-        $logs = DB::select('select * from log');
-        return view('layouts.logs',['logs'=>$logs]);
+        $logs = FacadesDB::select('select * from log');
+        return view('dashboard.logs.index',['logs'=>$logs]);
     }
 }
