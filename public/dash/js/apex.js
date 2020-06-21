@@ -2900,59 +2900,7 @@ var KTWidgets = function() {
                     new ApexCharts(t, o).render()
                 }
             }(),
-            function() {
-                var t = document.getElementById("kt_mixed_widget_16_chart"),
-                    e = parseInt(KTUtil.css(t, "height"));
-                if (t) {
-                    var o = {
-                        series: [60, 50, 75, 80],
-                        chart: {
-                            height: e,
-                            type: "radialBar"
-                        },
-                        plotOptions: {
-                            radialBar: {
-                                hollow: {
-                                    margin: 0,
-                                    size: "30%"
-                                },
-                                dataLabels: {
-                                    showOn: "always",
-                                    name: {
-                                        show: !1,
-                                        fontWeight: "700"
-                                    },
-                                    value: {
-                                        color: KTApp.getSettings().colors.gray["gray-700"],
-                                        fontSize: "18px",
-                                        fontWeight: "700",
-                                        offsetY: 10,
-                                        show: !0
-                                    },
-                                    total: {
-                                        show: !0,
-                                        label: "Total",
-                                        fontWeight: "bold",
-                                        formatter: function(t) {
-                                            return "60%"
-                                        }
-                                    }
-                                },
-                                track: {
-                                    background: KTApp.getSettings().colors.gray["gray-100"],
-                                    strokeWidth: "100%"
-                                }
-                            }
-                        },
-                        colors: [KTApp.getSettings().colors.theme.base.info, KTApp.getSettings().colors.theme.base.danger, KTApp.getSettings().colors.theme.base.success, KTApp.getSettings().colors.theme.base.primary],
-                        stroke: {
-                            lineCap: "round"
-                        },
-                        labels: ["Progress"]
-                    };
-                    new ApexCharts(t, o).render()
-                }
-            }(),
+
             function() {
                 var t = document.getElementById("kt_mixed_widget_17_chart"),
                     e = KTUtil.hasAttr(t, "data-color") ? KTUtil.attr(t, "data-color") : "warning",

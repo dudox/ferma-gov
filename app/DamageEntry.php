@@ -34,4 +34,9 @@ class DamageEntry extends Model
     {
         return $this->hasOne(States::class,'state_id','state_id');
     }
+
+    public function zones()
+    {
+        return $this->hasOne(GeoRegions::class,'id','zone_id');
+    }
 }

@@ -18,8 +18,17 @@ class Dashboard extends Controller
         $entry_overall = Road::with('degree','progress')->get();
         $recent_entry = $this->list_recent_reports();
         $zones = $this->list_geo_zones();
+        $percentile = $this->reports_percentile();
+        $total_reports = $this->list_reports();
+        $roads_prior = $this->list_reported_road_order();
 
-        return view('dashboard.index',compact('entry_overall','zones','recent_entry'));
+        return view('dashboard.index',compact(
+            'entry_overall',
+            'zones',
+            'recent_entry',
+            'percentile',
+            'total_reports',
+            'roads_prior'));
     }
 
     function list_geo_zones(){
@@ -30,7 +39,36 @@ class Dashboard extends Controller
         return DamageEntry::with('roads.progress','states')->orderBy('id','DESC')->get()->take(7);
     }
 
-    // public function reports_percentile($){
-    //     Road::where('')->count;
-    // }
+    public function reports_percentile(){
+        $total = Road::count();
+        $one = Road::where('status','1')->count();
+        $two = Road::where('status','2')->count();
+        $three = Road::where('status','3')->count();
+
+        $pending = ($one / $total) * 100;
+        $ongoing = ($two / $total) * 100;
+        $completed = ($three / $total) * 100;
+
+        return array(
+            [$pending,"warning","Pending"],
+            [$ongoing,"info","Ongoing"],
+            [$completed,"danger","Completed"],
+        );
+    }
+
+    public function list_reports(){
+        return DamageEntry::get();
+    }
+
+    public function list_reported_road_order(){
+        return DamageEntry::selectRaw('COUNT(*) as total, road_id, state_id, zone_id')->with(['roads.progress' => function($query) {
+            $query->select('id', 'name','description','color_code');
+        },
+        'states'=> function($query){
+            $query->select('state_id', 'name');
+        },'zones'=> function($query){
+            $query->select('id', 'zone');
+        }])
+        ->groupBy('road_id')->orderBy('total','DESC')->get()->take(5);
+    }
 }

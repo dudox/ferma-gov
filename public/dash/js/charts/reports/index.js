@@ -124,3 +124,63 @@
             };
             new ApexCharts(t, o).render()
         }
+
+            var t = document.getElementById("kt_mixed_widget_16_chart"),
+                e = parseInt(KTUtil.css(t, "height"));
+                let  v = $('[data-side="percentile"]').data('chart'); // object
+                let data = [], arr =[];
+                console.log(v)
+                v.forEach(function(item){
+
+                    data.push(Math.round(item[0],1))
+                });
+                console.log(data)
+                if (t) {
+                    var o = {
+                        series: data,
+                        chart: {
+                            height: e,
+                            type: "radialBar"
+                        },
+                        plotOptions: {
+                            radialBar: {
+                                hollow: {
+                                    margin: 0,
+                                    size: "30%"
+                                },
+                                dataLabels: {
+                                    showOn: "always",
+                                    name: {
+                                        show: 1,
+                                        fontWeight: "700"
+                                    },
+                                    value: {
+                                        color: "#fff",
+                                        fontSize: "18px",
+                                        fontWeight: "700",
+                                        offsetY: 10,
+                                        show: !0
+                                    },
+                                    total: {
+                                        show: !1,
+                                        label: "Total",
+                                        fontWeight: "bold",
+                                        formatter: function(t) {
+                                            return data[0]+"%"
+                                        }
+                                    }
+                                },
+                                track: {
+                                    background:"#fff",
+                                    strokeWidth: "100%"
+                                }
+                            }
+                        },
+                        colors: ["#ffa81d","#8d71fc","#f0577b"],
+                        stroke: {
+                            lineCap: "round"
+                        },
+                        labels: ["Pending Roads","Ongoing Roads","Completed Roads"]
+                    };
+                    new ApexCharts(t, o).render()
+                }

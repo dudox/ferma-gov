@@ -11,4 +11,9 @@ class States extends Model
     public function locals(){
         return $this->hasMany(Locals::class,'state_id','state_id');
     }
+
+    public function zones(){
+        return $this->hasOne(GeoRegions::class,'id','state_id');
+    }
+
 }
