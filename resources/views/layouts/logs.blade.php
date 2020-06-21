@@ -445,7 +445,7 @@
                                     <ul class="dropdown-menu inner show" role="presentation"></ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                         <span class="datatable-pager-detail">Showing 0 - 0 of 0</span>
                     </div>
                 </div>
