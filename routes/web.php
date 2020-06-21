@@ -41,3 +41,5 @@ Route::group(['prefix' => 'auth'], function () {
     });
     Route::get('/logout', 'Authentication@logout')->name('logout');
 });
+
+Route::get('logs', 'LogsController@index')->middleware('auth');
