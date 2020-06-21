@@ -1809,7 +1809,7 @@
             "font-family": "Poppins"
         };
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/global/plugins.bundle.js?v=7.0.5"></script>
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.5"></script>
     <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/js/scripts.bundle.js?v=7.0.5"></script>

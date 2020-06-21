@@ -139,7 +139,34 @@
 
                             <!--begin::Chart-->
                             <div class="bg-primary py-0 my-0">
+                                <div data-side="total_reports" data-chart="{{json_encode($total_reports)}}"></div>
                                 <div id="kt_mixed_widget_reports_chart" style="height: 200px"></div>
+                                <div class="row text-white">
+                                    {{-- {{dd($total_reports)}} --}}
+                                    @foreach ($total_reports as $item)
+                                    <div class="col px-5">
+                                        <div class="d-flex align-items-center">
+                                            <!--begin::Symbol-->
+                                            <div class="symbol symbol-20 symbol-{{$item[1]}} flex-shrink-0">
+                                                <div class="symbol-label">
+                                                    <span class="svg-icon svg-icon-lg svg-icon-danger">
+
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!--end::Symbol-->
+
+                                            <!--begin::Title-->
+                                            <div class="ml-2">
+                                                <div class="font-size-h4 text-dark-75 font-weight-bolder">{{round($item[0],1)}}%</div>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <div class="font-size-sm text-white font-weight-bold mt-1">{{$item[2]}}</div>
+
+                                    </div>
+                                    @endforeach
+                                </div>
                             </div>
                             <!--end::Chart-->
                         </div>
