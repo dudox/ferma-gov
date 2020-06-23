@@ -10,6 +10,7 @@ class Log extends Model
     protected $fillable = [
         'user_id', 'activity','ip_address', 'position','color_code'
     ];
+
     public function user(){
         return $this->hasOne(User::class,'id','user_id');
     }

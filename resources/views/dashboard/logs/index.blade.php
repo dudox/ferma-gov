@@ -139,6 +139,7 @@
                     field: "User Info",
                     title: "User Info",
                     width: 250,
+                    autoHide: !1,
                     template: function(t) {
                         return '<span class="badge font-weight-bold"><i class="fa fa-user-circle fa-sm text-primary"></i>&nbsp;'+t['User Info']['name'] + "</span><br><span class='badge font-weight-bold'><i class='fa fa-envelope fa-sm'></i>&nbsp;" + t['User Info']['email']+"</span>"
                     }

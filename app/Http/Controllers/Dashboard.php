@@ -6,6 +6,7 @@ use App\DamageEntry;
 use App\GeoRegions;
 use App\Http\Filters\FilterDamage;
 use App\Road;
+use App\User;
 use GeoRegionsSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,8 @@ class Dashboard extends Controller
         $percentile = $this->reports_percentile();
         $total_reports = $this->list_reports();
         $roads_prior = $this->list_reported_road_order();
+        $reports_zone = $this->get_zone_reports();
+        $users = $this->list_administrator();
 
         return view('dashboard.index',compact(
             'entry_overall',
@@ -28,7 +31,9 @@ class Dashboard extends Controller
             'recent_entry',
             'percentile',
             'total_reports',
-            'roads_prior'));
+            'roads_prior',
+            'reports_zone',
+            'users'));
     }
 
     function list_geo_zones(){
@@ -70,5 +75,18 @@ class Dashboard extends Controller
             $query->select('id', 'zone');
         }])
         ->groupBy('road_id')->orderBy('total','DESC')->get()->take(5);
+    }
+
+    public function get_zone_reports(){
+        $geos = GeoRegions::with('reports')->withCount('reports')->get();
+        $data = [];
+        foreach ($geos as $geo) {
+            $data []= $geo->reports_count;
+        }
+        return $data;
+    }
+
+    public function list_administrator(){
+        return User::get();
     }
 }

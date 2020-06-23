@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-
+@section('title', $zone->zone)
 @section('content')
 <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
 
@@ -121,66 +121,10 @@
                             <h3 class="card-title font-weight-bolder text-dark">List of states in {{$zone->zone}}</h3>
                             <div class="card-toolbar">
                                 <div class="dropdown dropdown-inline">
-                                    <a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ki ki-bold-more-ver"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover py-5">
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-drop"></i></span>
-                                                    <span class="navi-text">New Group</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-list-3"></i></span>
-                                                    <span class="navi-text">Contacts</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-rocket-1"></i></span>
-                                                    <span class="navi-text">Groups</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-bell-2"></i></span>
-                                                    <span class="navi-text">Calls</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-gear"></i></span>
-                                                    <span class="navi-text">Settings</span>
-                                                </a>
-                                            </li>
+                                    <span class="badge badge-primary"  aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-map fa-sm text-white"></i> {{count($zone->states)}} States
+                                    </span>
 
-                                            <li class="navi-separator my-3"></li>
-
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-magnifier-tool"></i></span>
-                                                    <span class="navi-text">Help</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-bell-2"></i></span>
-                                                    <span class="navi-text">Privacy</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
                                 </div>
                             </div>
                         </div>
