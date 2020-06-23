@@ -223,7 +223,7 @@
                                                         </div>
                                                         @endforeach
                                                     </div>
-                                                    <div class="d-flex d-block"><a href="#" class="btn btn-light-primary btn-block font-weight-bold text-center">See All</a></div>
+                                                    <div class="d-flex d-block pt-3 px-0 mx-0"><a href="#" class="btn btn-light-primary btn-block font-weight-bold text-center ">See All</a></div>
                                                 </div>
 
                                                 <div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
@@ -249,7 +249,7 @@
                                                         @endforeach
 
                                                     </div>
-                                                    <div class="d-flex d-block px-5 py-2"><a href="{{ route('logs') }}" class="btn btn-light-primary btn-block font-weight-bold text-center">See All</a></div>
+                                                    <div class="d-flex d-block px-5 py-4"><a href="{{ route('logs') }}" class="btn btn-light-primary btn-block font-weight-bold text-center">See All</a></div>
 
                                                 </div>
                                                 <div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
