@@ -138,7 +138,7 @@ class Process extends Controller
                 $key++;
                 $res .= $key." ".$local->local_name."\n";
             }
-            return $res;
+            return $this->con($res);
         }
 
     }
@@ -165,7 +165,7 @@ class Process extends Controller
             $key++;
             $res .= $key." ".$road->name."\n";
         }
-        return $res;
+        return $this->con($res);
     }
 
     public function setRoads(){
