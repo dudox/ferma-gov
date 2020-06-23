@@ -25,6 +25,7 @@ class Authentication extends Controller
                 'activity'=> "user logged in",
                 'ip_address' => Request::ip(),
                 'position' => $place->regionName. ", " .$place->countryName,
+                'color_code'=>'label-light-success'
             ]);
             return redirect()->route('dashboard');
         }
@@ -40,6 +41,7 @@ class Authentication extends Controller
             'activity'=> "user logged out",
             'ip_address' => Request::ip(),
             'position' => $place->cityName. ", " .$place->countryName,
+            'color_code'=>'label-light-danger'
         ]);
         Auth::logout();
         return redirect()->route('login');

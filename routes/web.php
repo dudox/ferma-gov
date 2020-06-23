@@ -21,11 +21,21 @@ Route::get('/', function () {
 Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function () {
     Route::get('/', 'Dashboard@index')->name('dashboard');
     Route::get('logs', 'LogsController@index')->name('logs');
+
+
     Route::group(['prefix' => 'screens'], function () {
         Route::get('/', 'DamageScreenController@index')->name('screens');
         Route::post('/update', 'DamageScreenController@update')->name('screens.update');
 
     });
+
+
+    Route::group(['prefix' => 'regions'], function () {
+        Route::get('/', 'RegionsController@index')->name('regions');
+        Route::get('/{id}', 'RegionsController@states')->name('regions.single');
+
+    });
+
     Route::group(['prefix' => 'entries'], function () {
         Route::get('/', 'DamageEntryController@index')->name('entries');
         Route::get('/{damageEntry}', 'DamageEntryController@show')->name('entries.show');

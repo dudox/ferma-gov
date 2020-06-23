@@ -371,7 +371,7 @@
 
                                 <!--begin::Text-->
                                 <div class="d-flex flex-column flex-grow-1">
-                                    <a href="#" class="text-dark-75 text-hover-primary font-weight-bold  py-0 my-0">
+                                    <a href="{{ route('regions.single',str_replace(' ','_',$data->zone)) }}" class="text-dark-75 text-hover-primary font-weight-bold  py-0 my-0">
                                         {{$data->zone}}
                                     </a>
                                     <span class="text-muted font-weight-bold py-0 my-0 small">

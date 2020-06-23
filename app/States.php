@@ -16,4 +16,9 @@ class States extends Model
         return $this->hasOne(GeoRegions::class,'id','state_id');
     }
 
+    public function roads()
+    {
+        return $this->hasManyThrough('App\Road', 'App\Locals','state_id','local_id','state_id','local_id');
+    }
+
 }
