@@ -76,7 +76,6 @@
                     <div class="card card-custom mb-2">
                         <div class="card-body p-0">
                             <div class="d-flex">
-                                <!--begin::Desktop Search-->
                                 <div class="quick-search quick-search-inline flex-grow-1" id="kt_quick_search_inline">
                                     <!--begin::Form-->
                                     <form method="get" class="quick-search-form">
@@ -111,7 +110,7 @@
                                     </div>
                                     <!--end::Dropdown-->
                                 </div>
-                                <!--end::Desktop Search-->
+
                             </div>
                         </div>
                     </div>
