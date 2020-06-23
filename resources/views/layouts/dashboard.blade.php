@@ -186,6 +186,7 @@
                                     </div>
 
                                     <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
+                                        <form>
                                             <div class="d-flex flex-column pt-12 bg-dark-o-5 rounded-top">
                                                 <h4 class="d-flex">
                                                     <span class="text-dark ml-5">User Notifications</span>
@@ -248,6 +249,8 @@
                                                         @endforeach
 
                                                     </div>
+                                                    <div class="d-flex d-block px-5 py-2"><a href="{{ route('logs') }}" class="btn btn-light-primary btn-block font-weight-bold text-center">See All</a></div>
+
                                                 </div>
                                                 <div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
                                                     <div class="d-flex flex-center text-center text-muted min-h-200px">

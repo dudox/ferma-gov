@@ -32,7 +32,7 @@ class EventServiceProvider extends ServiceProvider
             $view->with([
                 'logs'=> \App\Log::orderBy('id','desc')->get(),
                 'regions' => \App\GeoRegions::with('states')->get()->take(5),
-                'reports'=> \App\DamageEntry::with('roads')->get()
+                'reports'=> \App\DamageEntry::with('roads')->get()->take(10)
             ]);
         });
         parent::boot();
