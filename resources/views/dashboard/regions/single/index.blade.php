@@ -140,14 +140,14 @@
                                         <span class=" symbol-label font-weight-boldest small">{{mb_substr($item->name,0,3)}}</span>
                                     </div>
                                     <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2 ml-2">
-                                        <a href="#" class="text-dark font-weight-bold text-hover-primary mb-1 font-size-lg title">{{$item->name}}</a>
-                                        <span class="text-muted font-weight-bold">2 bed, 1 bath, 1 carpark</span>
+                                        <a href="{{ route('regions.roads',[str_replace(' ','_',$zone->zone),str_replace(' ','_',$item->name)]) }}" class="text-dark font-weight-bold text-hover-primary mb-1 font-size-lg title">{{$item->name}}</a>
+                                        <span class="text-muted font-weight-bold">Total of {{ count($item->locals) }} local government</span>
                                     </div>
 
-                                    <a href="#" class="btn btn-icon btn-light btn-sm">
+                                    <a href="{{ route('regions.roads',[str_replace(' ','_',$zone->zone),str_replace(' ','_',$item->name)]) }}" class="btn btn-icon btn-light btn-sm">
                                         <span class="svg-icon svg-icon-success">
                                             <span class="svg-icon svg-icon-md">
-                                                <!--begin::Svg Icon | path:/metronic/themes/metronic/theme/html/demo9/dist/assets/media/svg/icons/Navigation/Arrow-right.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <polygon points="0 0 24 0 24 24 0 24" />
                                                         <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " x="11" y="5" width="2" height="14" rx="1" />

@@ -22,9 +22,6 @@ class RegionsController extends Controller
                 $roads [] = $road;
             }
         }
-
-
-
         // $locals = $state->Locals()->get();
 
         $reports = DamageEntry::where('zone_id',$zone->id)->get();

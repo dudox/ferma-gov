@@ -95,7 +95,7 @@
                             <!--begin::Left-->
                             <div class="d-none d-lg-flex align-items-center mr-3">
                                 <!--begin::Logo-->
-                                <a href="https://keenthemes.com/metronic/preview/demo9/index.html" class="mr-20">
+                                <a href="{{ route('dashboard') }}" class="mr-20">
                                     <img alt="Logo" src="{{asset('assets/img/brand/logo.png')}}" class="img-fluid" width="300px"/>
                                 </a>
                                 <!--end::Logo-->
@@ -865,7 +865,7 @@
             <div class="navi navi-spacer-x-0 p-0">
                 <!--begin::Item-->
                     <!--begin::Item-->
-                    <a href="https://keenthemes.com/metronic/preview/demo9/custom/apps/user/profile-2.html" class="navi-item">
+                    <a href="{{ route('dashboard') }}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">
@@ -892,7 +892,7 @@
                 <!--end:Item-->
 
                 <!--begin::Item-->
-                <a href="https://keenthemes.com/metronic/preview/demo9/custom/apps/userprofile-1/overview.html" class="navi-item">
+                <a href="{{ route('entries') }}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">
