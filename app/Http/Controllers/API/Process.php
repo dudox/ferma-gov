@@ -90,11 +90,9 @@ class Process extends Controller
             if($this->text[5] == 1){
                 try
                 {
-                    $url = URL::temporarySignedRoute('upload', now()->addDays(1), ['phone' => $this->phone]);
-                    $this->client->messages->create($this->phone,array(
-                        'from' => 'FERMA iReporter',
-                        'body' => 'Hey Ketav! It’s good to see you after long time!')
-                    );
+                    $url = URL::temporarySignedRoute('upload', now()->addDays(1), ['phone' => '+'.$this->phone]);
+                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$url] );
+
                     $this->storeInput();
                 }
                 catch (Exception $e)
@@ -110,14 +108,6 @@ class Process extends Controller
             }
         }
 
-
-
-
-
-
-
-
-        //return DamageType::find($this->count + 1)->name;
     }
 
     public function getStep()
@@ -209,6 +199,11 @@ class Process extends Controller
 
     }
 
+    public function convert($number){
+        $phone =  substr($number, 1);
+        return "+234".$phone;
+    }
+
     public function setter()
     {
         $this->sessionId = request()->sessionId;
@@ -221,6 +216,7 @@ class Process extends Controller
         $this->authToken  = config('app.twilio')['TWILIO_AUTH_TOKEN'];
         $this->appSid     = config('app.twilio')['TWILIO_APP_SID'];
         $this->client = new Client($this->accountSid, $this->authToken);
+
     }
 
     public function con($message)

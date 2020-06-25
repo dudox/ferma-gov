@@ -61,3 +61,6 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('/logout', 'Authentication@logout')->name('logout');
 });
 
+Route::get('upload', 'RegisterController@register')->name('upload')->middleware('signed');
+
+
