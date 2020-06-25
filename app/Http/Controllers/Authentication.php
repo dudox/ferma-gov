@@ -6,6 +6,8 @@ use App\Http\Requests\Login;
 use Request;
 use Illuminate\Support\Facades\Auth;
 use App\Log;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 use Stevebauman\Location\Facades\Location;
 
 class Authentication extends Controller
@@ -45,6 +47,42 @@ class Authentication extends Controller
         ]);
         Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function accounts(){
+        $users = User::with('regions')->findOrFail(Auth::user()->id);
+        return view('dashboard.accounts.index',compact('users'));
+    }
+
+    public function personal(){
+        $user = User::find(Auth::user()->id);
+        $user->name = request()->name;
+        $user->email = request()->email;
+        if($user->save()){
+            return redirect()->back()->with(['personal'=> 'Changes saved!']);
+
+        }
+    }
+
+    public function password(){
+        $user = User::find(Auth::user()->id);
+        request()->validate([
+            'old' => 'required',
+            'password' => 'required|min:6',
+            'confirm' => 'required_with:password|same:password|min:6'
+        ]);
+
+        if(Hash::check(request()->old, $user->password)){
+            $user->password = Hash::make(request()->password);
+            if($user->save()){
+                return redirect()->back()->with(['password'=> 'Changes saved!','color'=>'primary']);
+            } else {
+                $res = redirect()->back()->with(['password'=> 'Changes saved!','color'=>'primary']);
+            }
+
+        } else {
+            return redirect()->back()->with(['password'=> 'Password inocrrect!','color'=>'danger']);
+        }
     }
 
 }

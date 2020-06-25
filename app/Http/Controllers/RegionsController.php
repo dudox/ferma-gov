@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 class RegionsController extends Controller
 {
     public function states($id){
-        $zone = GeoRegions::with('states.roads')->where('zone',str_replace('_', ' ', $id))->first();
+        $zone = GeoRegions::with('states.roads')->where('zone',str_replace('_', ' ', $id))->firstOrFail();
         $states = States::with('locals')->where('zone_id',$zone->id)->get();
         $roads = array();
         foreach($zone->states as $item){

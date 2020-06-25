@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Emmanuel Ogolekwu',
                 'email' => 'emmanuel@mayapro1.com',
+                'region_id' => '0',
                 'email_verified_at' => Carbon\Carbon::now(),
                 'password' => Hash::make('my33pesd#'),
                 'created_at' => Carbon\Carbon::now(),

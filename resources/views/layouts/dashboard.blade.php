@@ -18,6 +18,7 @@
     <link href="{{asset('dash/css/bootstrap.min.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dash/css/prismjs.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dash/css/ferma-dashboard.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
+    @yield('styles')
 
     <link rel="shortcut icon" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/media/logos/favicon.ico" />
 
@@ -238,7 +239,7 @@
                                                                 </div>
                                                                 <div class="navi-text">
                                                                     <div class="font-weight-bold">
-                                                                        {{$item->name}} just reported {{$item->roads->name}}
+                                                                        {{$item->name}} just reported {{$item->roads->name}} road
                                                                     </div>
                                                                     <div class="text-muted">
                                                                         {{$item->created_at->diffForHumans()}}
@@ -342,7 +343,7 @@
                         <!--begin::Nav-->
                         <div class="nav nav-dark order-1 order-md-2">
                             <a href="{{ route('dashboard') }}" target="_blank" class="nav-link pr-3 pl-0">Dashboard</a>
-                            <a href="http://keenthemes.com/metronic" target="_blank" class="nav-link px-3">Account</a>
+                            <a href="{{ route('accounts') }}" target="_blank" class="nav-link px-3">Account</a>
                             <a href="{{ route('logs') }}" target="_blank" class="nav-link pl-3 pr-0">Logs</a>
                         </div>
                         <!--end::Nav-->
@@ -460,7 +461,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="https://keenthemes.com/metronic/preview/demo9/custom/apps/user/profile-1/personal-information.html" class="navi-item">
+                <a href="{{ route('accounts') }}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">

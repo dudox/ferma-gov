@@ -9,7 +9,10 @@ use App\Http\Controllers\Controller;
 use App\Locals;
 use App\Road;
 use App\States;
-use Illuminate\Http\Request;
+use Exception;
+use Illuminate\Support\Facades\URL;
+use Twilio\Rest\Client;
+use Twilio\Jwt\ClientToken;
 
 class Process extends Controller
 {
@@ -20,10 +23,10 @@ class Process extends Controller
     public $sessionId;
     public $serviceCode;
     public $screen;
-    public $state;
-    public $local;
-    public $road;
-    public $zone;
+    public $accountSid;
+    public $authToken;
+    public $appSid;
+    public $client;
 
     public function __construct()
     {
@@ -80,8 +83,32 @@ class Process extends Controller
             echo $this->getRoads($this->setLocals()[0]);
             // var_dump($this->setLocals());
 
-        if($this->count ==5 && $this->present == $this->text[4])
-            $this->storeInput();
+        if($this->count ==  5 && $this->present == $this->text[4])
+            echo $this->con("Would you mind sending us a picture of the bad road ?\n\n 1. Yes\n 2. No");
+
+        if($this->count == 6){
+            if($this->text[5] == 1){
+                try
+                {
+                    $url = URL::temporarySignedRoute('upload', now()->addDays(1), ['phone' => $this->phone]);
+                    $this->client->messages->create($this->phone,array(
+                        'from' => 'FERMA iReporter',
+                        'body' => 'Hey Ketav! It’s good to see you after long time!')
+                    );
+                    $this->storeInput();
+                }
+                catch (Exception $e)
+                {
+                    echo "Error: " . $e->getMessage();
+                }
+
+            }
+            elseif($this->text[5] == 2){
+                $this->storeInput();
+            } else {
+
+            }
+        }
 
 
 
@@ -190,6 +217,10 @@ class Process extends Controller
         $this->text = explode("*", request()->text);
         $this->count = count($this->text);
         $this->present = end($this->text);
+        $this->accountSid = config('app.twilio')['TWILIO_ACCOUNT_SID'];
+        $this->authToken  = config('app.twilio')['TWILIO_AUTH_TOKEN'];
+        $this->appSid     = config('app.twilio')['TWILIO_APP_SID'];
+        $this->client = new Client($this->accountSid, $this->authToken);
     }
 
     public function con($message)

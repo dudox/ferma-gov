@@ -25,6 +25,12 @@ class DamageEntry extends Model
     {
         return $this->hasOne(Road::class, 'id', 'road_id');
     }
+
+    public function locals()
+    {
+        return $this->hasOne(Locals::class, 'local_id','local_id');
+    }
+
     public function progress()
     {
         return $this->hasOne(DamageStatus::class, 'id', 'status');

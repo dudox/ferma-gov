@@ -34,10 +34,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
         Route::get('/', 'RegionsController@index')->name('regions');
         Route::get('/{id}', 'RegionsController@states')->name('regions.single');
         Route::get('{id}/{state}', 'RoadsController@index')->name('regions.roads');
+    });
 
+    // route for adminstrator accounts
 
-
-
+    Route::group(['prefix' => 'accounts'], function () {
+        Route::get('/', 'Authentication@accounts')->name('accounts');
+        Route::post('/info', 'Authentication@personal')->name('account.info.update');
+        Route::post('password', 'Authentication@password')->name('account.password.update');
     });
 
     Route::group(['prefix' => 'entries'], function () {

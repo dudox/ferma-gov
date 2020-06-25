@@ -39,4 +39,8 @@ class User extends Authenticatable
     public function logs(){
         return $this->hasMany(Log::class);
     }
+
+    public function regions(){
+        return $this->hasOne(GeoRegions::class,'id','region_id');
+    }
 }

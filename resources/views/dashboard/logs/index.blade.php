@@ -1,6 +1,5 @@
 @extends('layouts.dashboard')
-
-
+@section('title','Logs Activity')
 @section('content')
 <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Subheader-->
