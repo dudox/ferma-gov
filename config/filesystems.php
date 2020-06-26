@@ -56,7 +56,7 @@ return [
         ],
         'uploads' => [
             'driver' => 'local',
-            'root'   => '/home/ferma/public_html/',
+            'root'   => public_path() . '/'
         ],
 
         's3' => [
