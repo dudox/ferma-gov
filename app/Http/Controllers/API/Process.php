@@ -56,7 +56,7 @@ class Process extends Controller
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.".$this->url);
+        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.");
         die;
     }
 
@@ -96,7 +96,7 @@ class Process extends Controller
                 try
                 {
 
-                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image "] );
+                   // $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$this->url] );
 
                     $this->storeInput();
                 }
