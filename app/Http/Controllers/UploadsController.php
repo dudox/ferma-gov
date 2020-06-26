@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\DamageEntry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class UploadsController extends Controller
 {
@@ -23,12 +25,13 @@ class UploadsController extends Controller
         if ($request->hasFile('image')) {
 
             $image = $request->file('image');
-            $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads');
-            $file = $destinationPath.'/'.$name;
-            $user->images = $file;
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $path = "uploads";
+            $location = $path.'/'.$imageName;
+            Storage::disk('uploads')->put($location,  File::get($request->image));
+
+            $user->images = $location;
             $user->save();
-            $image->move($destinationPath, $name);
 
             return back()->with('status','Image Upload successfully');
         }

@@ -56,7 +56,7 @@ class Process extends Controller
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.");
+        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.".$this->url);
         die;
     }
 
@@ -85,7 +85,7 @@ class Process extends Controller
 
 
         if($this->count == 5)
-        echo $this->con("Enter your full name for FERMA Marshal National Award Consideration");
+        echo $this->con("Enter your full name for FERMA Marshal National Award Consideration".$this->setRoads()[0]);
             // var_dump($this->setLocals());
 
         if($this->count ==  6)

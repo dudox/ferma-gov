@@ -310,7 +310,7 @@
 
                             <div class="owl-carousel owl-theme px-0">
                                 @foreach ($reportsImages as $item)
-                                <div class="item" style="background: url({{$item->images}}); background-size: cover; background-repeat: no-repeat; min-height:100% !important" >
+                                <div class="item" style="background: url({{asset($item->images)}}); background-size: cover; background-repeat: no-repeat; min-height:100% !important" >
                                     <a href="">
                                         <div class="cover ">
                                             <div class="container">

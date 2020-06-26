@@ -54,6 +54,10 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'uploads' => [
+            'driver' => 'local',
+            'root'   => '/home/ferma/public_html/',
+        ],
 
         's3' => [
             'driver' => 's3',
