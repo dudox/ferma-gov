@@ -93,7 +93,7 @@ class Process extends Controller
 
         if($this->count == 7){
             if($this->text[6] == 1){
-                $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$this->url] );
+                $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for reporting this road to FERMA. Please visit the link below to upload an image ".$this->url] );
                 $this->storeInput();
             }
             elseif($this->text[6] == 2){
