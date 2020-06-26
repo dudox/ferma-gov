@@ -96,7 +96,7 @@ class Process extends Controller
                 try
                 {
 
-                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$this->url] );
+                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image "] );
 
                     $this->storeInput();
                 }
