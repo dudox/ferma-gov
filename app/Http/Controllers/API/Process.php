@@ -84,25 +84,23 @@ class Process extends Controller
             echo $this->getRoads($this->setLocals()[0]);
 
 
-        if($this->count == 5 && $this->present == $this->text[4])
+        if($this->count == 5)
         echo $this->con("Enter your full name for FERMA Marshal National Award Consideration");
             // var_dump($this->setLocals());
 
-        if($this->count ==  6 && $this->present == $this->text[5])
+        if($this->count ==  6)
             echo $this->con("Would you mind sending us a picture of the bad road ?\n\n 1. Yes\n 2. No");
 
-        if($this->count == 7){
-            if($this->text[6] == 1){
+        if($this->count == 7)
+            if($this->text[6] == 1):
                 $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for reporting this road to FERMA. Click on the link below to upload an road image  ".$this->url] );
                 $this->storeInput();
-            }
-            elseif($this->text[6] == 2){
-                $this->storeInput();
-            }
-            else {
 
-            }
-        }
+            elseif($this->text[6] == 2):
+                $this->storeInput();
+
+            endif;
+
 
     }
 
