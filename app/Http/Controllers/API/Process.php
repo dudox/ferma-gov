@@ -27,6 +27,7 @@ class Process extends Controller
     public $authToken;
     public $appSid;
     public $client;
+    public $url;
 
     public function __construct()
     {
@@ -50,12 +51,12 @@ class Process extends Controller
             'state_id'=>$this->setStates()[0],
             'local_id'=>$this->setLocals()[0],
             'road_id'=>$this->setRoads()[0],
-            'name' => $this->text[3],
+            'name' => $this->text[5],
             'phone' => $this->phone,
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediate.\n Report more.");
+        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.".$this->url);
         die;
     }
 
@@ -81,17 +82,21 @@ class Process extends Controller
 
         if($this->count == 4 && $this->present == $this->text[3])
             echo $this->getRoads($this->setLocals()[0]);
+
+
+        if($this->count == 5 && $this->present == $this->text[4])
+        echo $this->con("Enter your full name for FERMA Marshal National Award Consideration");
             // var_dump($this->setLocals());
 
-        if($this->count ==  5 && $this->present == $this->text[4])
+        if($this->count ==  6 && $this->present == $this->text[5])
             echo $this->con("Would you mind sending us a picture of the bad road ?\n\n 1. Yes\n 2. No");
 
-        if($this->count == 6){
-            if($this->text[5] == 1){
+        if($this->count == 7){
+            if($this->text[6] == 1){
                 try
                 {
-                    $url = URL::temporarySignedRoute('upload', now()->addDays(1), ['phone' => '+'.$this->phone]);
-                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$url] );
+
+                    $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for report this road to ferma. Please visit the link below to upload an image ".$this->url] );
 
                     $this->storeInput();
                 }
@@ -101,10 +106,8 @@ class Process extends Controller
                 }
 
             }
-            elseif($this->text[5] == 2){
+            elseif($this->text[6] == 2){
                 $this->storeInput();
-            } else {
-
             }
         }
 
@@ -216,6 +219,7 @@ class Process extends Controller
         $this->authToken  = config('app.twilio')['TWILIO_AUTH_TOKEN'];
         $this->appSid     = config('app.twilio')['TWILIO_APP_SID'];
         $this->client = new Client($this->accountSid, $this->authToken);
+        $this->url = URL::temporarySignedRoute('upload', now()->addMinutes(30), ['phone' => $this->phone]);
 
     }
 
