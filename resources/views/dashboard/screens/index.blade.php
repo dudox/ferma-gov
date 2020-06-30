@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="row justify-content-center">
-    <div class="col-lg-10 col-md-10">
+<div class="row justify-content-center pt-30 pb-30">
+    <div class="col-lg-10 col-md-8">
       <div class="card shadow border-0">
         <div class="card-header pb-5">
           <div class="text-muted text-center mt-2 mb-3"><h4>Manage Screen Messages</h4></div>
@@ -27,4 +27,5 @@
       </div>
     </div>
   </div>
+
 @endsection
