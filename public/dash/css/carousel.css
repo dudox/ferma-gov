@@ -1,12 +1,15 @@
-#owl-header .item {
-    height: 100vh;
+
+
+  #owl-header .item {
     position: relative;
   }
-  #owl-header .item img {
+
+  #owl-header .item .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   #owl-header .item .cover {
     padding: 0px 0;
     position: absolute;
@@ -22,6 +25,7 @@
     position: relative;
     padding: 30px;
     overflow: hidden;
+    height: 100% !important;
   }
   #owl-header .item .cover .header-content .line {
     content: "";
@@ -32,7 +36,7 @@
     top: 0;
     position: absolute;
     border: 9px solid #fff;
-    -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 60% 0, 86% 100%, 0 100%);
     clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
   }
   #owl-header .item .cover .header-content h2 {
@@ -146,7 +150,8 @@
     opacity: 1;
   }
 
-  @media (min-width:2052px) and (max-width:2732px)
+
+  @media (min-width:600px) and (max-width:768)
  {
     #owl-header .item {
         height: 66vh;

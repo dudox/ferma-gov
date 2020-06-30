@@ -298,19 +298,19 @@
                                 <div id="kt_header_menu" class="header-menu header-menu-left header-menu-mobile  header-menu-layout-default ">
                                     <!--begin::Header Nav-->
                                     <ul class="menu-nav ">
-                                        <li class="menu-item  menu-item-open menu-item-here " ><a href="{{route('dashboard')}}" class="menu-link"><span class="menu-text">Dashboard</span><span class="menu-desc">Recent Updates & Reports</span><i class="menu-arrow"></i></a>
+                                        <li class="menu-item  menu-item-open @yield('dashboard_a') " ><a href="{{route('dashboard')}}" class="menu-link"><span class="menu-text">Dashboard</span><span class="menu-desc">Recent Updates & Reports</span><i class="menu-arrow"></i></a>
 
                                         </li>
-                                        <li class="menu-item  menu-item-submenu menu-item-rel" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Entries</span><span class="menu-desc">User Data & Analytics</span><i class="menu-arrow"></i></a>
+                                        <li class="menu-item menu-item-rel @yield('entery_a')" ><a href="{{ route('entries') }}" class="menu-link"><span class="menu-text">Entries</span><span class="menu-desc">User Data & Analytics</span><i class="menu-arrow"></i></a>
 
                                         </li>
-                                        <li class="menu-item  menu-item-submenu menu-item-rel" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Regions</span><span class="menu-desc">Records & Form Entries</span><i class="menu-arrow"></i></a>
+                                        <li class="menu-item menu-item-rel @yield('region_a')"><a href="{{ route('regions') }}" class="menu-link"><span class="menu-text">Regions</span><span class="menu-desc">Records & Form Entries</span><i class="menu-arrow"></i></a>
 
                                         </li>
-                                        <li class="menu-item  menu-item-submenu menu-item-rel" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Apps</span><span class="menu-desc">Starter Applications</span><i class="menu-arrow"></i></a>
+                                        <li class="menu-item  menu-item-rel @yield('road_a')"><a href="{{ route('roads') }}" class="menu-link "><span class="menu-text">Roads</span><span class="menu-desc">Roads projects control</span><i class="menu-arrow"></i></a>
 
                                         </li>
-                                        <li class="menu-item  menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Pages</span><span class="menu-desc">Custom Pages</span><i class="menu-arrow"></i></a>
+                                        <li class="menu-item @yield('advance_a')" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Advanced</span><span class="menu-desc">Custom Search</span><i class="menu-arrow"></i></a>
 
                                         </li>
                                     </ul>

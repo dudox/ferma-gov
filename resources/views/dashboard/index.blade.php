@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('title', 'Dashboard')
+@section('dashboard_a','menu-item-here')
 @section('content')
 <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
 
@@ -210,7 +211,6 @@
                                     <a href="#" class="text-muted text-hover-primary font-weight-bold font-size-lg mt-1">Total Reports Entry</a>
                                 </div>
                             </div>
-    <!--end::Tiles Widget 12-->
                         </div>
                     </div>
                         <div class="card card-custom gutter-b  bg-primary ">

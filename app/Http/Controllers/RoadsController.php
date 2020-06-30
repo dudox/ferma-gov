@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DamageEntry;
 use App\GeoRegions;
+use App\Road;
 use App\States;
 use Illuminate\Http\Request;
 
@@ -50,5 +51,20 @@ class RoadsController extends Controller
 
     public function get_roads_reports_w_images($state_id){
         return DamageEntry::with('roads','locals')->where('state_id',$state_id)->where('images','<>',null)->orderBy('id','DESC')->get()->unique('road_id');
+    }
+
+    public function general(){
+        return view('dashboard.roads.general.index');
+    }
+
+    public function api(){
+        $regions = GeoRegions::get();
+        $roads = Road::get();
+
+        return response()->json(['data'=>
+            [
+                    1=>'Ahmed',2,3,4,5
+            ]
+        ], 200);
     }
 }

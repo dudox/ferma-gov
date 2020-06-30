@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @section('title',$regions->states[0]->name)
+@section('road_a','menu-item-here')
 @section('styles')
 <link rel="stylesheet" href="{{ asset('dash/css/carousel.css') }}">
 @endsection
@@ -49,12 +50,12 @@
             <div class="row">
                 <div class="col-xl-4">
                     <!--begin::Tiles Widget 1-->
-                    <div class="card card-custom gutter-b card-stretch">
+                    <div class="card card-custom  gutter-b card-stretch">
                         <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <div class="card-title">
                                 <div class="card-label">
-                                    <div class="font-weight-bolder">Weekly Sales Stats</div>
+                                    <div class="font-weight-bolder">List of all roads in  {{$regions->states[0]->name}}</div>
                                     <div class="font-size-sm text-muted mt-2">890,344 Sales</div>
                                 </div>
                             </div>
@@ -126,65 +127,37 @@
                         <!--end::Header-->
 
                         <!--begin::Body-->
-                        <div class="card-body d-flex flex-column px-0">
-                            <!--begin::Chart-->
-                            <div id="road_status_chart" data-color="info" style="height: 150px"></div>
-                            <!--end::Chart-->
-
-                            <!--begin::Items-->
-                            <div class="flex-grow-1 card-spacer-x">
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="/metronic/themes/metronic/theme/html/demo9/dist/assets/media/svg/misc/006-plurk.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Top Authors</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">Ricky Hunt, Sandra Trepp</div>
-                                        </div>
+                        <div class="card-body pt-2" id="myFilter">
+                            <!--begin::Item-->
+                            @foreach ($roads->roads as $item)
+                            <div class="recipe">
+                                <div  class="d-flex align-items-center mb-2">
+                                    <div class="symbol symbol-30  symbol-dark">
+                                        <span class=" symbol-label font-weight-boldest small">{{mb_substr($item->name,0,3)}}</span>
                                     </div>
-                                    <div class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">+105$</div>
-                                </div>
-                                <!--end::Item-->
-
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between mb-10">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="/metronic/themes/metronic/theme/html/demo9/dist/assets/media/svg/misc/015-telegram.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Bestsellers</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">Pitstop Email Marketing</div>
-                                        </div>
+                                    <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2 ml-2">
+                                        <a href="" class="text-dark font-weight-bold text-hover-primary mb-1  title">{{$item->name}}</a>
+                                        <span class="text-muted font-weight-bold"></span>
                                     </div>
-                                    <div class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">+60$</div>
-                                </div>
-                                <!--end::Item-->
 
-                                <!--begin::Item-->
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <div class="d-flex align-items-center mr-2">
-                                        <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
-                                            <div class="symbol-label">
-                                                <img src="/metronic/themes/metronic/theme/html/demo9/dist/assets/media/svg/misc/003-puzzle.svg" alt="" class="h-50" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="#" class="font-size-h6 text-dark-75 text-hover-primary font-weight-bolder">Top Engagement</a>
-                                            <div class="font-size-sm text-muted font-weight-bold mt-1">KT.com solution provider</div>
-                                        </div>
-                                    </div>
-                                    <div class="label label-light label-inline font-weight-bold text-dark-50 py-4 px-3 font-size-base">+75$</div>
+                                    <a href="" class="btn btn-icon btn-light btn-sm">
+                                        <span class="svg-icon svg-icon-success">
+                                            <span class="svg-icon svg-icon-md">
+                                               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <polygon points="0 0 24 0 24 24 0 24" />
+                                                        <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " x="11" y="5" width="2" height="14" rx="1" />
+                                                        <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </a>
                                 </div>
-                                <!--end::Item-->
                             </div>
-                            <!--end::Items-->
+                            @endforeach
+
+
                         </div>
                         <!--end::Body-->
                     </div>
@@ -304,17 +277,20 @@
                 </div>
                 <div class="col-xl-3">
                     <!--begin::Tiles Widget 7-->
-                    <div class="card card-custom bgi-no-repeat gutter-b card-stretch">
                         <!--begin::Body-->
-                        <div class="card-body p-0" id="owl-header">
+                        <div class="p-0 " id="owl-header">
 
-                            <div class="owl-carousel owl-theme px-0">
+                            <div class="owl-carousel owl-theme px-0 ">
+
                                 @foreach ($reportsImages as $item)
-                                <div class="item" style="background: url({{asset($item->images)}}); background-size: cover; background-repeat: no-repeat; min-height:100% !important" >
+
+                                <div class="item card-stretch vh-auto" >
                                     <a href="">
+                                        <img alt="Card image cap" class=" img vh-100" src="{{asset($item->images)}}" />
+
                                         <div class="cover ">
                                             <div class="container">
-                                                <div class="header-content">
+                                                <div class="header-content col-12">
                                                     <div class="line"></div>
                                                     <h2 class="small">Bad road around {{$item->locals->local_name }} Local Govt</h2>
                                                     <h1 class="small">{{ ucfirst($item->roads->name) }} Rd</h1>
@@ -326,8 +302,7 @@
                                 </div>
                                 @endforeach
                             </div>
-                        </div>
-                        <!--end::Body-->
+
                     </div>
                     <!--end::Tiles Widget 7-->
                 </div>

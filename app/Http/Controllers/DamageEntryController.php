@@ -15,7 +15,9 @@ class DamageEntryController extends Controller
     public function index()
     {
         $entries = DamageEntry::orderBy('created_at', 'DESC')->paginate(20);
-        return view('dashboard.entries.index')->with('entries', $entries);
+        $mostActive = DamageEntry::selectRaw('count(phone) as phone_count, name, phone')->groupBy('phone')->orderBy('phone_count','desc')->get()->take(5);
+        $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->get();
+        return view('dashboard.entries.index',compact('mostActive','monthly'));
     }
 
     /**

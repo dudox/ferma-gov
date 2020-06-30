@@ -30,6 +30,12 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
     });
 
 
+    Route::group(['prefix' => 'roads'], function () {
+        Route::get('/', 'RoadsController@general')->name('roads');
+
+    });
+
+
     Route::group(['prefix' => 'regions'], function () {
         Route::get('/', 'RegionsController@index')->name('regions');
         Route::get('/{id}', 'RegionsController@states')->name('regions.single');

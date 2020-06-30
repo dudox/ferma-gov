@@ -3,7 +3,7 @@
     if (t) {
 
         var e = {
-            series: [t.dataset.value],
+            series: [Math.round(t.dataset.value)],
             chart: {
                 height: 200,
                 type: "radialBar",
@@ -53,7 +53,7 @@
     var t = document.getElementById("percentage_reports_total");
     if (t) {
         var o = {
-            series: [t.dataset.value],
+            series: [Math.round(t.dataset.value)],
             chart: {
                 height: 180,
                 type: "radialBar"

@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('/ussd', 'API\Process@index')->name('process');
 Route::post('/user/logs', 'LogsController@logs')->name('logs');
 
+Route::post('/datatables/roads','RoadsController@api');
+
 

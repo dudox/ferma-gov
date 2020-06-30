@@ -28,4 +28,11 @@ class RegionsController extends Controller
 
         return view('dashboard.regions.single.index',compact('states','zone','reports','roads'));
     }
+
+    public function index(){
+        $regions = GeoRegions::with('states.roads','reports')->withCount('reports')->get();
+
+        $totals = DamageEntry::get()->count();
+        return view('dashboard.regions.index',compact('regions','totals'));
+    }
 }
