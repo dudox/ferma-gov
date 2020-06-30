@@ -69,87 +69,25 @@ class RoadSeeder extends Seeder
 
             [
                 'local_id' => '483',
-                'name' => 'Ota to Ajegunle',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Ajegunle to Wasiu-aiyetoro',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Wasiu-aiyetoro to Alakuko',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Alakuko to Alagbado-ile',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Alagbado-ile to Ijaiye',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Ijaiye to Egba',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Egba to Orile',
-            ],
-	        [
-                'local_id' => '483',
-                'name' => 'Ota to Ajegunle',
+                'name' => 'Lagos-Abeokuta Exp.',
             ],
             [
                 'local_id' => '490',
-                'name' => 'Ajegunle to Wasiu-aiyetoro',
+                'name' => 'Lagos-Abeokuta Exp.',
             ],
-            [
-                'local_id' => '490',
-                'name' => 'Wasimi-aiyetoro to Alakuko',
-            ],
-            [
-                'local_id' => '490',
-                'name' => 'Alakuko to Alagbado-ile',
-            ],
-            [
-                'local_id' => '490',
-                'name' => 'Alagbado-ile to Ijaiye',
-            ],
-            [
-                'local_id' => '490',
-                'name' => 'Ijaiye to Egba',
-            ],
-            [
-                'local_id' => '490',
-                'name' => 'Egba to Orile',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Orile to Ipaja road',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Ipaja road to Shasha road',
-            ],
-            [
-                'local_id' => '483',
-                'name' => 'Shasha road to Agege motor road',
-            ],
+
             [
                 'local_id' => '491',
-                'name' => 'Agege motor road(Lagos/Abeokuta to Airport road)',
+                'name' => 'Agege motor road',
             ],
             [
                 'local_id' => '498',
-                'name' => 'Agege motor road(Anthony to Apapa Exp)',
+                'name' => 'Agege motor road',
             ],
-            [
-                'local_id' => '491',
-                'name' => 'Agege motor road(Anthony to Apapa Exp)',
-            ],
+
 	        [
                 'local_id' => '491',
-                'name' => 'Apapa owonronshoki Exp(Oshodi in. to Airport)',
+                'name' => 'Apapa owonronshoki Exp.',
             ],
             [
                 'local_id' => '491',
@@ -157,11 +95,7 @@ class RoadSeeder extends Seeder
             ],
             [
                 'local_id' => '491',
-                'name' => 'Apapa owonronshoki Exp(Oshodi In. to Ikorodu road)',
-            ],
-            [
-                'local_id' => '491',
-                'name' => 'Lagos-Ibadan Exp',
+                'name' => 'Lagos-Ibadan Exp.',
             ],
             [
                 'local_id' => '491',
@@ -233,11 +167,11 @@ class RoadSeeder extends Seeder
             ],
             [
                 'local_id' => '482',
-                'name' => 'Apapa owonronshoki Exp(Signal barrack to liverpool jetty)',
+                'name' => 'Apapa owonronshoki Exp.',
             ],
             [
                 'local_id' => '494',
-                'name' => 'Apongbon Bridge-New Marina- Ahmadu Bello way',
+                'name' => 'New Marina',
             ],
             [
                 'local_id' => '494',
@@ -245,44 +179,20 @@ class RoadSeeder extends Seeder
             ],
             [
                 'local_id' => '485',
-                'name' => 'Lagos-Badagry Exp',
+                'name' => 'Lagos-Badagry Exp.',
             ],
             [
                 'local_id' => '482',
-                'name' => 'Lagos-Badagry Exp',
+                'name' => 'Lagos-Badagry Exp.',
             ],
             [
                 'local_id' => '484',
-                'name' => 'Lagos-Badagry Exp(Signal Barrack to Trade fair complex)',
+                'name' => 'Lagos-Badagry Exp.',
             ],
 
             [
-                'local_id' => '497',
-                'name' => 'Lagos-Badagry Exp(Trade fair complex to Mebanu)',
-            ],
-            [
-                'local_id' => '497',
-                'name' => 'Lagos-Badagry Exp(Mebanu to Alasia)',
-            ],
-            [
-                'local_id' => '497',
-                'name' => 'Lagos-Badagry Exp(Alasia to Ajanikin)',
-            ],
-            [
                 'local_id' => '486',
-                'name' => 'Lagos-Badagry Exp(Ajanikin to Ale)',
-            ],
-            [
-                'local_id' => '486',
-                'name' => 'Lagos-Badagry Exp(Ale to Ajara Agamaden)',
-            ],
-            [
-                'local_id' => '486',
-                'name' => 'Ajara Agamaden to Agaw Awusa',
-            ],
-            [
-                'local_id' => '486',
-                'name' => 'Agaw Awusa to Benin border',
+                'name' => 'Lagos-Badagry Exp.',
             ],
 
         ];
