@@ -488,7 +488,7 @@
                 </a>
                 <!--end:Item-->
 
-                <a href="https://keenthemes.com/metronic/preview/demo9/custom/apps/user/profile-3.html" class="navi-item">
+                <a href="{{route('screens')}}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">

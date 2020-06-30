@@ -80,8 +80,7 @@ class DamageScreenController extends Controller
         $screenTwo->update([
             'value' => $request->second,
         ]);
-
-        return back()->with('success', 'Updated Successfully');
+        return redirect()->back()->with('success', 'Updated Successfully');
     }
 
     /**
