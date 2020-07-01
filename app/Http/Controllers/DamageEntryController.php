@@ -15,7 +15,7 @@ class DamageEntryController extends Controller
      */
     public function index()
     {
-        $entries = DamageEntry::with('roads','states','locals','zones')->orderBy('created_at', 'DESC')->paginate(20);
+        $entries = DamageEntry::with('roads','states','locals','zones')->groupBy('phone')->orderBy('created_at', 'DESC')->paginate(20);
         $mostActive = DamageEntry::selectRaw('count(phone) as phone_count, name, phone')->groupBy('phone')->orderBy('phone_count','desc')->get()->take(5);
         $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->get();
         $daily = DamageEntry::where('created_at',Carbon::today())->count();
