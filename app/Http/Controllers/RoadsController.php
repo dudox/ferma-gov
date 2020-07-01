@@ -36,7 +36,13 @@ class RoadsController extends Controller
     public function percentage_reports_regions($zone_id,$state_id){
         $others = DamageEntry::where('zone_id',$zone_id)->count();
         $current = DamageEntry::where('state_id',$state_id)->count();
-        return  ($current / $others) * 100;
+        $ratio = null;
+        if($others + $current == 0){
+            $ratio = 0;
+        } else {
+            $ratio = ($current / $others) * 100;
+        }
+        return $ratio;
 
 
 
@@ -45,7 +51,13 @@ class RoadsController extends Controller
     public function percentage_reports_total($state_id){
         $others = DamageEntry::count();
         $current = DamageEntry::where('state_id',$state_id)->count();
-        return  ($current / $others) * 100;
+        $ratio = null;
+        if($others + $current == 0){
+            $ratio = 0;
+        } else {
+            $ratio = ($current / $others) * 100;
+        }
+        return $ratio;
 
     }
 
