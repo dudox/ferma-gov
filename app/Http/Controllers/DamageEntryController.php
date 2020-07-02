@@ -71,8 +71,10 @@ class DamageEntryController extends Controller
         $entries = DamageEntry::where('phone',$id)->get();
         if($entries->isEmpty()):
             abort(404);
+        else:
+            $roads = DamageEntry::with('roads')->selectRaw('COUNT(road_id) as total, road_id')->groupBy('road_id')->where('phone',$id)->orderBy('id','desc')->get()->take(5);
         endif;
-        return view('dashboard.entries.single.index',compact('entries'));
+        return view('dashboard.entries.single.index',compact('entries','roads'));
     }
 
     /**
