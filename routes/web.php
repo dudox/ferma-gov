@@ -57,6 +57,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
         Route::delete('/', 'DamageEntryController@destroy')->name('entries.clear');
 
     });
+    Route::group(['prefix' => 'new'], function () {
+        Route::get('/', 'RegisterController@index')->name('registration');
+        Route::post('/register', 'RegisterController@create')->name('register.new');
+    });
 });
 
 Route::group(['prefix' => 'auth'], function () {
