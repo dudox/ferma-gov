@@ -84,6 +84,12 @@
                                             @csrf
                                             <div class="row justify-content-center">
                                                 <div class="col-xl-9">
+                                                    @if(session()->has('message'))
+                                                        <div  class=" alert alert-success">
+                                                            <button type="button" class="close text-white" data-dismiss="alert">x</button>
+                                                            {{ session()->get('message') }}
+                                                        </div>
+                                                    @endif
                                                     <!--begin::Wizard Step 1-->
                                                     <div class="my-5 step" data-wizard-type="step-content" data-wizard-state="current">
                                                         <h5 class="text-dark font-weight-bold mb-10">User's Profile Details:</h5>
@@ -109,7 +115,10 @@
                                                         <div class="form-group row fv-plugins-icon-container has-success">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">First Name</label>
                                                             <div class="col-lg-9 col-xl-9">
-                                                                <input class="form-control form-control-solid form-control-lg is-valid" name="firstname" type="text" value="" required>
+                                                                <input class="form-control form-control-solid form-control-lg is-valid @error('firstname') is-invalid @enderror" name="firstname" type="text" value="" required>
+                                                                @error('firstname')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                             <div class="fv-plugins-message-container"></div></div>
                                                         </div>
                                                         <!--end::Group-->
@@ -117,7 +126,10 @@
                                                         <div class="form-group row fv-plugins-icon-container has-success">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Last Name</label>
                                                             <div class="col-lg-9 col-xl-9">
-                                                                <input class="form-control form-control-solid form-control-lg is-valid" name="lastname" type="text" value="" required>
+                                                                <input class="form-control form-control-solid form-control-lg is-valid @error('lastname') is-invalid @enderror" name="lastname" type="text" value="" required>
+                                                                @error('lastname')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                             <div class="fv-plugins-message-container"></div></div>
                                                         </div>
                                                         <!--end::Group-->
@@ -147,17 +159,23 @@
                                                                             <i class="fa fa-at"></i>
                                                                         </span>
                                                                     </div>
-                                                                    <input type="text" class="form-control form-control-solid form-control-lg is-valid" name="email" value="" required>
+                                                                    <input type="text" class="form-control form-control-solid form-control-lg is-valid @error('email') is-invalid @enderror" name="email" value="" required>
+                                                                    @error('email')
+                                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </div>
                                                             <div class="fv-plugins-message-container"></div></div>
                                                         </div>
                                                         <div class="form-group row fv-plugins-icon-container has-success">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Role</label>
                                                             <div class="col-9">
-                                                                <select onchange="showOptions(this)" class="form-control form-control-lg form-control-solid">
+                                                                <select name="role" onchange="showOptions(this)" class="form-control form-control-lg form-control-solid @error('role') is-invalid @enderror">
                                                                     <option>Select Role...</option>
                                                                     <option value="1" >Regional Supervisor</option>
                                                                     <option value="2">National Supervisor</option>
+                                                                    @error('role')
+                                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -204,6 +222,9 @@
                                                                       South West
                                                                     </label>
                                                                   </div>
+                                                                @error('region')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                               </div>
                                                             </div>
                                                           </fieldset>
@@ -214,7 +235,10 @@
                                                         <div class="form-group row fv-plugins-icon-container has-success">
                                                             <label class="col-xl-3 col-lg-3 col-form-label">Password</label>
                                                             <div class="col-lg-9 col-xl-9">
-                                                                <input class="form-control form-control-solid form-control-lg is-valid" name="password" type="password" value="" required>
+                                                                <input class="form-control form-control-solid form-control-lg is-valid @error('password') is-invalid @enderror" name="password" type="password" value="" required>
+                                                            @error('password')
+                                                                <div class="alert alert-danger">{{ $message }}</div>
+                                                            @enderror
                                                             <div class="fv-plugins-message-container"></div></div>
                                                         </div>
                                                         <!--end::Group-->

@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function () {
     Route::get('/', 'Dashboard@index')->name('dashboard');
     Route::get('logs', 'LogsController@index')->name('logs');
+    Route::get('admins', 'RegisterController@admins')->name('admins');
 
 
     Route::group(['prefix' => 'screens'], function () {
@@ -73,6 +74,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::get('upload', 'UploadsController@index')->name('upload')->middleware('signed');
 Route::post('upload', 'UploadsController@upload')->middleware('signed');
+
 
 
 
