@@ -21,7 +21,6 @@ Route::get('/', function () {
 Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function () {
     Route::get('/', 'Dashboard@index')->name('dashboard');
     Route::get('logs', 'LogsController@index')->name('logs');
-    Route::get('admins', 'RegisterController@admins')->name('admins');
 
 
     Route::group(['prefix' => 'screens'], function () {
@@ -61,6 +60,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
     Route::group(['prefix' => 'new'], function () {
         Route::get('/', 'RegisterController@index')->name('registration');
         Route::post('/register', 'RegisterController@create')->name('register.new');
+        Route::get('/admins', 'RegisterController@admins')->name('admins');
     });
 });
 

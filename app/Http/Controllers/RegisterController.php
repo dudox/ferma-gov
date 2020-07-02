@@ -14,10 +14,7 @@ class RegisterController extends Controller
         return view('dashboard.admin.index');
     }
     public function admins(){
-
         return view('dashboard.admin.profiles');
-
-
     }
     public function create(Request $request){
         $this->validate(request(), [
