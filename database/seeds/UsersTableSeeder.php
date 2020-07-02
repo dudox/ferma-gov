@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
         //
         DB::table('users')->insert([
             [
-                'name' => 'Emmanuel Ogolekwu',
-                'email' => 'emmanuel@smartsahara.com',
+                'name' => 'Admin',
+                'email' => 'info@smartsahara.com',
                 'region_id' => '0',
                 'role'=>'2',
                 'email_verified_at' => Carbon\Carbon::now(),

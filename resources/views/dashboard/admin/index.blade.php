@@ -213,7 +213,7 @@
                                                                   <div class="form-check">
                                                                     <input class="form-check-input" type="radio" name="region" id="region5" value="5">
                                                                     <label class="form-check-label" for="region5">
-                                                                      South South 
+                                                                      South South
                                                                     </label>
                                                                   </div>
                                                                   <div class="form-check">
@@ -282,7 +282,7 @@
             var x = document.getElementById("regions");
             if(s[s.selectedIndex].value=="1"){
                 x.style.display = "block";
-             }else{ 
+             }else{
                  x.style.display = "none";
              }
             }

@@ -56,7 +56,7 @@ class Process extends Controller
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.".$this->url);
+        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.");
         die;
     }
 
@@ -85,7 +85,7 @@ class Process extends Controller
 
 
         if($this->count == 5)
-        echo $this->con("Enter your full name for FERMA Marshal National Award Consideration".$this->setRoads()[0]);
+        echo $this->con("Enter your full name for FERMA Marshal National Award Consideration");
             // var_dump($this->setLocals());
 
         if($this->count ==  6)
@@ -93,7 +93,7 @@ class Process extends Controller
 
         if($this->count == 7)
             if($this->text[6] == 1):
-                $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for reporting this road to FERMA. Click on the link below to upload an road image  ".$this->url] );
+                $this->client->messages->create($this->convert($this->phone),['from' => 'FERMA', 'body' => "Thank you for reporting this road to FERMA. Click on the link below to upload road photo  ".$this->url] );
                 $this->storeInput();
 
             elseif($this->text[6] == 2):
@@ -171,12 +171,17 @@ class Process extends Controller
 
     public function getRoads($id){
         $roads = Road::where('local_id',$id)->get();
-        $res = "Please select the federal road you want to report\n\n";
-        foreach($roads as $key => $road){
-            $key++;
-            $res .= $key." ".$road->name."\n";
-        }
-        return $this->con($res);
+        if($roads > 0):
+            $res = "Please select the federal road you want to report\n\n";
+            foreach($roads as $key => $road){
+                $key++;
+                $res .= $key." ".$road->name."\n";
+            }
+            return $this->con($res);
+        else:
+            $res = "There is no federal road accross this location\n\n";
+            return $this->end($res);
+        endif;
     }
 
     public function setRoads(){
