@@ -171,12 +171,17 @@ class Process extends Controller
 
     public function getRoads($id){
         $roads = Road::where('local_id',$id)->get();
-        $res = "Please select the federal road you want to report\n\n";
-        foreach($roads as $key => $road){
-            $key++;
-            $res .= $key." ".$road->name."\n";
-        }
-        return $this->con($res);
+        if($roads > 0):
+            $res = "Please select the federal road you want to report\n\n";
+            foreach($roads as $key => $road){
+                $key++;
+                $res .= $key." ".$road->name."\n";
+            }
+            return $this->con($res);
+        else:
+            $res = "There is no federal road accross this location\n\n";
+            return $this->end($res);
+        endif;
     }
 
     public function setRoads(){
