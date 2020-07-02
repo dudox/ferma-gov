@@ -22,6 +22,7 @@ class Authentication extends Controller
     public function login(Login $request)
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // get ip address
             $ip = request()->ip();
             $place = Location::get($ip);
             Log::create([
