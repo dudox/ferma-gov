@@ -504,7 +504,7 @@
                         </div>
                         <div class="navi-text">
                             <div class="font-weight-bold">
-                                USSD
+                                configurations
                             </div>
                             <div class="text-muted">
                                 USSD screens and configuration

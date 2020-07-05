@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DamageScreen;
+use App\DamageStatus;
 use Illuminate\Http\Request;
 
 class DamageScreenController extends Controller
@@ -16,7 +17,8 @@ class DamageScreenController extends Controller
     {
         $screenOne = DamageScreen::where('order', 0)->first();
         $screenTwo = DamageScreen::where('order', 1)->first();
-        return view('dashboard.screens.index')->with('screenOne', $screenOne)->with('screenTwo', $screenTwo);
+        $status = DamageStatus::get();
+        return view('dashboard.screens.index')->with('screenOne', $screenOne)->with('screenTwo', $screenTwo)->with('status',$status);
     }
 
     /**
@@ -81,6 +83,17 @@ class DamageScreenController extends Controller
             'value' => $request->second,
         ]);
         return redirect()->back()->with('success', 'Updated Successfully');
+    }
+
+    public function override(Request $request){
+        $bad = DamageStatus::where('id',4)->first();
+        $crit = DamageStatus::where('id',5)->first();
+        $bad->cap = request()->bad;
+        $crit->cap = request()->critical;
+        $crit->save();
+        $bad->save();
+        return redirect()->back()->with('success1', 'Updated Successfully');
+
     }
 
     /**

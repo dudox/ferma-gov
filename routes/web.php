@@ -23,15 +23,17 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
     Route::get('logs', 'LogsController@index')->name('logs');
 
 
-    Route::group(['prefix' => 'screens'], function () {
+    Route::group(['prefix' => 'configurations'], function () {
         Route::get('/', 'DamageScreenController@index')->name('screens');
         Route::post('/update', 'DamageScreenController@update')->name('screens.update');
+        Route::post('/update/overide', 'DamageScreenController@override')->name('override.update');
 
     });
 
 
     Route::group(['prefix' => 'roads'], function () {
         Route::get('/', 'RoadsController@general')->name('roads');
+        Route::get('/{id}', 'RoadsController@single')->name('roads.single');
 
     });
 

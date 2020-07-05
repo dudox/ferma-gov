@@ -44,7 +44,7 @@
                                             </svg>
                                            <span class="font-weight-bolder h5 float-right" style="font-size: 20px !important;">{{count($entry_overall->where('status',1))}}</span>
                                         </span> <a href="#" class="text-warning font-weight-bold">
-                                            Pending Roads
+                                            UR Roads
                                         </a>
                                     </div>
                                     <div class="col bg-white px-6 py-8 rounded-xl mb-7">
@@ -61,7 +61,7 @@
                                            <span class="font-weight-bolder h5 float-right" style="font-size: 20px !important;">{{count($entry_overall->where('status',2))}}</span>
                                         </span>
                                         <a href="#" class="text-info font-weight-bold mt-2">
-                                            Ongoing Roads
+                                            WIP Roads
                                         </a>
                                     </div>
                                 </div>
@@ -139,8 +139,8 @@
                                 <span class="font-weight-bolder text-dark">Recent Entries</span>
                                 <span class="text-dark" style="font-size: 10px">
                                     <span class="text-muted">Road status indicators<br/></span>
-                                    <i class="fa fa-sm fa-road text-warning icon-xl"></i> Pending&nbsp;
-                                    <i class="fa fa-sm fa-road text-info icon-xl"></i> Ongoing&nbsp;
+                                    <i class="fa fa-sm fa-road text-warning icon-xl"></i> UR&nbsp;
+                                    <i class="fa fa-sm fa-road text-info icon-xl"></i> WIP&nbsp;
                                     <i class="fa fa-sm fa-road text-success icon-xl"></i> Completed
                                 </span>
                             </h3>

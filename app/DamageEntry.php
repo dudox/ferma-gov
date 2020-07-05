@@ -18,6 +18,7 @@ class DamageEntry extends Model
         'type',
         'status',
         'identifier',
+        'images',
         'name',
     ];
 

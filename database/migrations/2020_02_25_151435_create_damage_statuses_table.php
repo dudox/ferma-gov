@@ -18,6 +18,7 @@ class CreateDamageStatusesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('color_code');
+            $table->string('cap');
             $table->string('icon');
             $table->timestamps();
         });

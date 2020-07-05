@@ -59,70 +59,6 @@
                                     <div class="font-size-sm text-muted mt-2">890,344 Sales</div>
                                 </div>
                             </div>
-                            <div class="card-toolbar">
-                                <div class="dropdown dropdown-inline">
-                                    <a href="#" class="btn btn-clean btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="ki ki-bold-more-hor"></i>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                                        <!--begin::Navigation-->
-                                        <ul class="navi navi-hover py-5">
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-drop"></i></span>
-                                                    <span class="navi-text">New Group</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-list-3"></i></span>
-                                                    <span class="navi-text">Contacts</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-rocket-1"></i></span>
-                                                    <span class="navi-text">Groups</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-primary label-inline font-weight-bold">new</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-bell-2"></i></span>
-                                                    <span class="navi-text">Calls</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-gear"></i></span>
-                                                    <span class="navi-text">Settings</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="navi-separator my-3"></li>
-
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-magnifier-tool"></i></span>
-                                                    <span class="navi-text">Help</span>
-                                                </a>
-                                            </li>
-                                            <li class="navi-item">
-                                                <a href="#" class="navi-link">
-                                                    <span class="navi-icon"><i class="flaticon2-bell-2"></i></span>
-                                                    <span class="navi-text">Privacy</span>
-                                                    <span class="navi-link-badge">
-                                                        <span class="label label-light-danger label-rounded font-weight-bold">5</span>
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <!--end::Navigation-->
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!--end::Header-->
 
@@ -136,11 +72,11 @@
                                         <span class=" symbol-label font-weight-boldest small">{{mb_substr($item->name,0,3)}}</span>
                                     </div>
                                     <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2 ml-2">
-                                        <a href="" class="text-dark font-weight-bold text-hover-primary mb-1  title">{{$item->name}}</a>
+                                        <a href="{{ route('roads.single',str_replace(' ','_',$item->name)) }}" class="text-dark font-weight-bold text-hover-primary mb-1  title">{{$item->name}}</a>
                                         <span class="text-muted font-weight-bold"></span>
                                     </div>
 
-                                    <a href="" class="btn btn-icon btn-light btn-sm">
+                                    <a href="{{ route('roads.single',str_replace(' ','_',$item->name)) }}" class="btn btn-icon btn-light btn-sm">
                                         <span class="svg-icon svg-icon-success">
                                             <span class="svg-icon svg-icon-md">
                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

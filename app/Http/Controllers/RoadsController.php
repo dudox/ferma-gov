@@ -79,4 +79,9 @@ class RoadsController extends Controller
             ]
         ], 200);
     }
+
+    public function single($id){
+        $road = Road::where('name',str_replace('_',' ',$id))->firstOrFail();
+        return view('dashboard.roads.single.index',compact('road'));
+    }
 }
