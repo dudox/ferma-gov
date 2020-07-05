@@ -1769,7 +1769,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1793,7 +1793,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1817,7 +1817,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1841,7 +1841,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1865,7 +1865,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-07'),
               ],        
               [
                 'zone_id' => '6',
