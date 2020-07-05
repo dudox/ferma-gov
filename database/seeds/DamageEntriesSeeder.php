@@ -942,7 +942,6 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-04'),
               ],         
-              /////////////////////     
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1739,37 +1738,14 @@ class DamageEntriesSeeder extends Seeder
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
-                'local_id'=>'491',              [
-                    'zone_id' => '6',
-                    'state_id'=>'25',
-                    'local_id'=>'493',
-                    'road_id'=> '22',
-                    'name' => 'Oreo Fit',
-                    'phone' => '2349069999999',
-                    'identifier' => rand(111111111, 999999999),
-                    'images'=>'uploads/samson/01.jpg',
-                    'status' => 1,
-                    'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
-                  ],        
-                  [
-                    'zone_id' => '6',
-                    'state_id'=>'25',
-                    'local_id'=>'491',
-                    'road_id'=> '22',
-                    'name' => 'Anita Somol',
-                    'phone' => '2348011111116',
-                    'identifier' => rand(111111111, 999999999),
-                    'images'=>'uploads/samson/01.jpg',
-                    'status' => 1,
-                    'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-09'),
-                  ], 
+                'local_id'=>'491',
                 'road_id'=> '21',
                 'name' => 'Missty 10',
                 'phone' => '2349059999999',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1793,7 +1769,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1817,7 +1793,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1841,7 +1817,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-07'),
               ],        
               [
                 'zone_id' => '6',
@@ -1865,7 +1841,7 @@ class DamageEntriesSeeder extends Seeder
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
-                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
+                'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-07'),
               ],        
               [
                 'zone_id' => '6',
