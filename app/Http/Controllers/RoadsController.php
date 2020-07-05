@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DamageEntry;
 use App\GeoRegions;
+use App\Locals;
 use App\Road;
 use App\States;
 use Illuminate\Http\Request;
@@ -82,6 +83,9 @@ class RoadsController extends Controller
 
     public function single($id){
         $road = Road::where('name',str_replace('_',' ',$id))->firstOrFail();
-        return view('dashboard.roads.single.index',compact('road'));
+        $local = Locals::where('local_id',$road->local_id)->first();
+        $state = States::where('state_id',$local->state_id)->first();
+        $region = GeoRegions::where('id',$state->zone_id)->first();
+        return view('dashboard.roads.single.index',compact('road','local','state','region'));
     }
 }

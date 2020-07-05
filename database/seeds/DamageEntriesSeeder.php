@@ -58,7 +58,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349012345679',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 2,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-23'),
               ],
               [
@@ -94,7 +94,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349012345677',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-23'),
               ],
               [
@@ -130,7 +130,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345687',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-24'),
               ],
               [
@@ -166,7 +166,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345688',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-25'),
               ],
               [
@@ -226,7 +226,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345691',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 2,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-26'),
               ],
               [
@@ -286,7 +286,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345693',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-29'),
               ],
               [
@@ -334,7 +334,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345695',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-30'),
               ],
               [
@@ -370,7 +370,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345696',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-01'),
               ],
               [
@@ -418,7 +418,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345698',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-03'),
               ],
               [
@@ -442,7 +442,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345698',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-04'),
               ],
               [
@@ -490,7 +490,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345511',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 2,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-07'),
               ],
               [
@@ -526,7 +526,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349014345512',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-08'),
               ],
               [
@@ -553,7 +553,7 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-12'),
               ],
-              
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -575,7 +575,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349098989899',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-12'),
               ],
               [
@@ -638,7 +638,7 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-22'),
               ],
-              
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -648,7 +648,7 @@ class DamageEntriesSeeder extends Seeder
                 'phone' => '2349098989829',
                 'identifier' => rand(111111111, 999999999),
                 'images'=>'uploads/samson/01.jpg',
-                'status' => 1,
+                'status' => 3,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-01'),
               ],
               [
@@ -675,7 +675,7 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-07'),
               ],
-              
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -736,7 +736,7 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-14'),
               ],
-              
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -881,7 +881,7 @@ class DamageEntriesSeeder extends Seeder
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-13'),
               ],
-              
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -941,8 +941,8 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-04'),
-              ],         
-              /////////////////////     
+              ],
+              /////////////////////
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -954,7 +954,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-06'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -966,7 +966,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-09'),
-              ],              
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -978,7 +978,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-11'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -990,7 +990,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-13'),
-              ],     
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1002,7 +1002,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-14'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1014,7 +1014,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-19'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1026,7 +1026,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-25'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1038,7 +1038,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-29'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1050,7 +1050,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-30'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1062,7 +1062,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-02'),
-              ],    
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1074,7 +1074,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-06'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1086,7 +1086,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-08'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1098,7 +1098,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-19'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1110,7 +1110,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-15'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1122,7 +1122,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-23'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1134,7 +1134,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-25'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1146,7 +1146,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-28'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1158,7 +1158,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-04'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1170,7 +1170,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-05'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1182,7 +1182,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-07'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1194,7 +1194,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-11'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1206,7 +1206,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-19'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1218,7 +1218,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-14'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1230,7 +1230,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-24'),
-              ],  
+              ],
                             [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1242,7 +1242,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-27'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1254,7 +1254,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-29'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1266,7 +1266,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-31'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1278,7 +1278,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-01'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1290,7 +1290,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-05'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1302,7 +1302,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-03'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1314,7 +1314,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-09'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1326,7 +1326,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-10'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1338,7 +1338,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-13'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1350,7 +1350,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-15'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1362,7 +1362,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-19'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1374,7 +1374,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-20'),
-              ],  
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1386,7 +1386,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-29'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1398,7 +1398,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-02'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1410,7 +1410,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-04'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1422,8 +1422,8 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-07'),
-              ], 
- 
+              ],
+
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1435,7 +1435,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-10'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1447,7 +1447,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-13'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1459,7 +1459,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-17'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1471,7 +1471,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-16'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1483,7 +1483,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-19'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1495,7 +1495,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-26'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1507,7 +1507,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-23'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1519,7 +1519,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-05'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1531,7 +1531,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-09'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1543,7 +1543,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-11'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1555,7 +1555,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-10'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1567,7 +1567,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-13'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1579,7 +1579,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-16'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1591,7 +1591,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-19'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1603,7 +1603,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-23'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1615,7 +1615,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-27'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1627,7 +1627,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-29'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1639,7 +1639,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-02'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1651,7 +1651,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-04'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1663,7 +1663,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-06'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1675,7 +1675,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-05'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1687,7 +1687,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-04'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1699,7 +1699,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-07-01'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1711,7 +1711,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-01'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1723,7 +1723,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-01'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1735,7 +1735,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-07'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1750,7 +1750,7 @@ class DamageEntriesSeeder extends Seeder
                     'images'=>'uploads/samson/01.jpg',
                     'status' => 1,
                     'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-07'),
-                  ],        
+                  ],
                   [
                     'zone_id' => '6',
                     'state_id'=>'25',
@@ -1762,7 +1762,7 @@ class DamageEntriesSeeder extends Seeder
                     'images'=>'uploads/samson/01.jpg',
                     'status' => 1,
                     'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-09'),
-                  ], 
+                  ],
                 'road_id'=> '21',
                 'name' => 'Missty 10',
                 'phone' => '2349059999999',
@@ -1770,7 +1770,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-02-07'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1782,7 +1782,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-13'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1794,7 +1794,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-07'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1806,7 +1806,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-13'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1818,7 +1818,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-04-07'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1830,7 +1830,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-13'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1842,7 +1842,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-05-07'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1854,7 +1854,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-03-07'),
-              ], 
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1866,7 +1866,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-06-07'),
-              ],        
+              ],
               [
                 'zone_id' => '6',
                 'state_id'=>'25',
@@ -1878,7 +1878,7 @@ class DamageEntriesSeeder extends Seeder
                 'images'=>'uploads/samson/01.jpg',
                 'status' => 1,
                 'created_at' => Carbon\Carbon::createFromFormat('Y-m-d', '2020-01-02'),
-              ], 
+              ],
         ]);
     }
 }

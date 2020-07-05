@@ -69,14 +69,18 @@
                                 <div class="d-flex flex-column flex-grow-1 pr-8">
                                     <div class="d-flex flex-wrap mb-4">
                                         <a href="#" class="text-dark-50 text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
-                                        <i class="flaticon2-new-email mr-2 font-size-lg"></i>jason@siastudio.com</a>
+                                        <i class="fa fa-home mr-2 font-size-lg"></i><span class="text-primary"><u>LGA:</u></span> {{ ucfirst($local->local_name) }}</a>
                                         <a href="#" class="text-dark-50 text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2">
-                                        <i class="flaticon2-calendar-3 mr-2 font-size-lg"></i>PR Manager</a>
+                                        <i class="fa fa-building mr-2 font-size-lg"></i><span class="text-primary"><u>Location:</u></span> {{ $state->name }}</a>
                                         <a href="#" class="text-dark-50 text-hover-primary font-weight-bold">
-                                        <i class="flaticon2-placeholder mr-2 font-size-lg"></i>Melbourne</a>
+                                        <i class="flaticon2-placeholder mr-2 font-size-lg"></i><span class="text-primary"><u>Region:</u></span> {{ ucfirst($region->zone) }}</a>
                                     </div>
-                                    <span class="font-weight-bold text-dark-50">I distinguish three main text objectives could be merely to inform people.</span>
-                                    <span class="font-weight-bold text-dark-50">A second could be persuade people.You want people to bay objective</span>
+                                    <span class="font-weight-bold text-dark-75">Road Health</span>
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
                                 </div>
                                 <div class="d-flex align-items-center w-25 flex-fill float-right mt-lg-12 mt-8">
                                     <span class="font-weight-bold text-dark-75">Progress</span>
