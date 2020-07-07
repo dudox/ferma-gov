@@ -72,11 +72,11 @@
                                         <span class=" symbol-label font-weight-boldest small">{{mb_substr($item->name,0,3)}}</span>
                                     </div>
                                     <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2 ml-2">
-                                        <a href="{{ route('roads.single',str_replace(' ','_',$item->name)) }}" class="text-dark font-weight-bold text-hover-primary mb-1  title">{{$item->name}}</a>
+                                        <a href="{{ route('roads.single',['local'=>$item->local_id,'road'=>str_replace(' ','_',$item->name)]) }}" class="text-dark font-weight-bold text-hover-primary mb-1  title">{{$item->name}}</a>
                                         <span class="text-muted font-weight-bold"></span>
                                     </div>
 
-                                    <a href="{{ route('roads.single',str_replace(' ','_',$item->name)) }}" class="btn btn-icon btn-light btn-sm">
+                                    <a href="{{ route('roads.single',['local'=>$item->local_id,'road'=>str_replace(' ','_',$item->name)]) }}" class="btn btn-icon btn-light btn-sm">
                                         <span class="svg-icon svg-icon-success">
                                             <span class="svg-icon svg-icon-md">
                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

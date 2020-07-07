@@ -84,7 +84,7 @@ class RoadsController extends Controller
                 "Status"=> $road->status,
                 "Road Health"=> ucfirst($this->health($road->id)[2]),
                 "LGA"=>$road->local->local_name,
-                "Actions"=> route('roads.single',str_replace(' ','_',$road->name))
+                "Actions"=> route('roads.single',['local'=>$road->local_id,'road'=>str_replace(' ','_',$road->name)])
             ];
         }
 
@@ -97,8 +97,8 @@ class RoadsController extends Controller
         ];
     }
 
-    public function single($id){
-        $road = Road::with('progress')->where('name',str_replace('_',' ',$id))->firstOrFail();
+    public function single($local,$road){
+        $road = Road::with('progress')->where('name',str_replace('_',' ',$road))->where('local_id',$local)->firstOrFail();
         $local = Locals::where('local_id',$road->local_id)->first();
         $state = States::where('state_id',$local->state_id)->first();
         $region = GeoRegions::where('id',$state->zone_id)->first();
