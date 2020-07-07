@@ -311,9 +311,9 @@
                                         <li class="menu-item  menu-item-rel @yield('road_a')"><a href="{{ route('roads') }}" class="menu-link "><span class="menu-text">Roads</span><span class="menu-desc">Roads projects control</span><i class="menu-arrow"></i></a>
 
                                         </li>
-                                        <li class="menu-item @yield('advance_a')" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Advanced</span><span class="menu-desc">Custom Search</span><i class="menu-arrow"></i></a>
+                                        {{-- <li class="menu-item @yield('advance_a')" data-menu-toggle="hover" aria-haspopup="true"><a href="javascript:;" class="menu-link menu-toggle"><span class="menu-text">Advanced</span><span class="menu-desc">Custom Search</span><i class="menu-arrow"></i></a>
 
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                     <!--end::Header Nav-->
                                 </div>

@@ -71,7 +71,7 @@
                         </span>
                         <h3 class="card-label">Search Roads</h3>
                     </div>
-                    <div class="card-toolbar">
+                    {{-- <div class="card-toolbar">
                         <!--begin::Dropdown-->
                         <div class="dropdown dropdown-inline mr-2">
                             <button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,7 +151,7 @@
                                 <!--end::Svg Icon-->
                             </span>New Record</a>
                         <!--end::Button-->
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="card-body">
                     <!--begin: Search Form-->

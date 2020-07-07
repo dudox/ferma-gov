@@ -79,24 +79,6 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                                     $('.datatable-input[data-col-index="3"]').append('<option value="' + t[a].title + '">' + t[a].title + "</option>")
                                 });
                                 break;
-                            case "Type":
-                                t = {
-                                    1: {
-                                        title: "Online",
-                                        state: "danger"
-                                    },
-                                    2: {
-                                        title: "Retail",
-                                        state: "primary"
-                                    },
-                                    3: {
-                                        title: "Direct",
-                                        state: "success"
-                                    }
-                                },
-                                 this.data().unique().sort().each(function(a, e) {
-                                    //$('.datatable-input[data-col-index="7"]').append('<option value="' + a + '">' + t[a].title + "</option>")
-                                })
                         }
                     })
                 },
