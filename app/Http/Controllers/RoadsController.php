@@ -84,7 +84,7 @@ class RoadsController extends Controller
                 "Status"=> $road->status,
                 "Road Health"=> ucfirst($this->health($road->id)[2]),
                 "LGA"=>$road->local->local_name,
-                "Actions"=> null
+                "Actions"=> route('roads.single',str_replace(' ','_',$road->name))
             ];
         }
 
