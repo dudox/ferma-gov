@@ -1,7 +1,93 @@
 @extends('layouts.dashboard')
 @section('entery_a','menu-item-here')
 @section('title',$entries->first()->name)
+@section('styles')
+<link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+@endsection
 @section('content')
+<style>
+    .container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 100vh;
+    padding: 30px 50px;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 25px auto;
+    font-size: 18px;
+    color: #999;
+}
+
+.tz-gallery {
+    padding: 0px;
+}
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+    padding: 2px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tz-gallery .lightbox:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    pointer-events: none;
+    z-index: 9000;
+    transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(46, 132, 206, 0.7);
+    content: '';
+    transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+    opacity: 1;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+}
+</style>
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Subheader-->
     <div class="subheader py-2 py-lg-4 subheader-transparent" id="kt_subheader">
@@ -514,187 +600,50 @@
                             <!--end: List Widget 10-->
                         </div>
                     </div>
-                    <!--end::Row-->
-                    <!--begin::Advance Table: Widget 7-->
                     <div class="card card-custom gutter-b">
-                        <!--begin::Header-->
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label font-weight-bolder text-dark">New Arrivals</span>
+                                <span class="card-label font-weight-bolder text-dark">Photos of Roads Reported</span>
                                 <span class="text-muted mt-3 font-weight-bold font-size-sm">More than 400+ new members</span>
                             </h3>
-                            <div class="card-toolbar">
-                                <ul class="nav nav-pills nav-pills-sm nav-dark-75">
-                                    <li class="nav-item">
-                                        <a class="nav-link py-2 px-4" data-toggle="tab" href="#kt_tab_pane_1_1">Month</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link py-2 px-4" data-toggle="tab" href="#kt_tab_pane_1_2">Week</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link py-2 px-4 active" data-toggle="tab" href="#kt_tab_pane_1_3">Day</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-                        <style>
-                            .hide-bullets {
-    list-style:none;
-    margin-left: -40px;
-    margin-top:20px;
-}
-
-.thumbnail {
-    padding: 0;
-}
-
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-    width: 100%;
-}
-                        </style>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body py-2">
-                            <!--begin::Table-->
-                            <div class="row">
-                                <div class="col-sm-6" id="slider-thumbs">
-                                    <!-- Bottom switcher of slider -->
-                                    <ul class="hide-bullets">
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-0">
-                                                <img src="http://placehold.it/150x150&text=zero">
-                                            </a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/150x150&text=1"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/150x150&text=2"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/150x150&text=3"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/150x150&text=4"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-5"><img src="http://placehold.it/150x150&text=5"></a>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-6"><img src="http://placehold.it/150x150&text=6"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-7"><img src="http://placehold.it/150x150&text=7"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-8"><img src="http://placehold.it/150x150&text=8"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-9"><img src="http://placehold.it/150x150&text=9"></a>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-10"><img src="http://placehold.it/150x150&text=10"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-11"><img src="http://placehold.it/150x150&text=11"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-12"><img src="http://placehold.it/150x150&text=12"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-13"><img src="http://placehold.it/150x150&text=13"></a>
-                                        </li>
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-14"><img src="http://placehold.it/150x150&text=14"></a>
-                                        </li>
-
-                                        <li class="col-sm-3">
-                                            <a class="thumbnail" id="carousel-selector-15"><img src="http://placehold.it/150x150&text=15"></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="col-xs-12" id="slider">
-                                        <!-- Top part of the slider -->
-                                        <div class="row">
-                                            <div class="col-sm-12" id="carousel-bounding-box">
-                                                <div class="carousel slide" id="myCarousel">
-                                                    <!-- Carousel items -->
-                                                    <div class="carousel-inner">
-                                                        <div class="active item" data-slide-number="0">
-                                                            <img src="http://placehold.it/470x480&text=zero"></div>
-
-                                                        <div class="item" data-slide-number="1">
-                                                            <img src="http://placehold.it/470x480&text=1"></div>
-
-                                                        <div class="item" data-slide-number="2">
-                                                            <img src="http://placehold.it/470x480&text=2"></div>
-
-                                                        <div class="item" data-slide-number="3">
-                                                            <img src="http://placehold.it/470x480&text=3"></div>
-
-                                                        <div class="item" data-slide-number="4">
-                                                            <img src="http://placehold.it/470x480&text=4"></div>
-
-                                                        <div class="item" data-slide-number="5">
-                                                            <img src="http://placehold.it/470x480&text=5"></div>
-
-                                                        <div class="item" data-slide-number="6">
-                                                            <img src="http://placehold.it/470x480&text=6"></div>
-
-                                                        <div class="item" data-slide-number="7">
-                                                            <img src="http://placehold.it/470x480&text=7"></div>
-
-                                                        <div class="item" data-slide-number="8">
-                                                            <img src="http://placehold.it/470x480&text=8"></div>
-
-                                                        <div class="item" data-slide-number="9">
-                                                            <img src="http://placehold.it/470x480&text=9"></div>
-
-                                                        <div class="item" data-slide-number="10">
-                                                            <img src="http://placehold.it/470x480&text=10"></div>
-
-                                                        <div class="item" data-slide-number="11">
-                                                            <img src="http://placehold.it/470x480&text=11"></div>
-
-                                                        <div class="item" data-slide-number="12">
-                                                            <img src="http://placehold.it/470x480&text=12"></div>
-
-                                                        <div class="item" data-slide-number="13">
-                                                            <img src="http://placehold.it/470x480&text=13"></div>
-
-                                                        <div class="item" data-slide-number="14">
-                                                            <img src="http://placehold.it/470x480&text=14"></div>
-
-                                                        <div class="item" data-slide-number="15">
-                                                            <img src="http://placehold.it/470x480&text=15"></div>
-                                                    </div>
-                                                    <!-- Carousel nav -->
-                                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                                    </a>
-                                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <div class="card-body py-2 px-0 mx-0">
+                            <div class="container gallery-container px-3">
+                                <div class="tz-gallery px-0">
+                                    <div class="row">
+                                        @php
+                                            $rounds = 0
+                                        @endphp
+                                        @foreach ($reports as $key => $item)
+                                        @php
+                                            $rounds++;
+                                            if($rounds %4 !=0){
+                                               echo '
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="lightbox" href="'. asset($item->images).'">
+                                                        <img src="'. asset($item->images) .'" alt="'.$item->name.'" class="img-fluid">
                                                     </a>
                                                 </div>
-                                            </div>
-                                        </div>
+                                               ';
+                                            } else {
+
+                                                echo '
+                                                <div class="col-sm-12 col-md-8">
+                                                    <a class="lightbox" href="'. asset($item->images) .'">
+                                                        <img src="'. asset($item->images) .'" alt="Traffic">
+                                                    </a>
+                                                </div>
+                                          ';
+
+                                            }
+
+                                        @endphp
+
+                                        @endforeach
                                     </div>
+
                                 </div>
-                                <!--/Slider-->
                             </div>
-                            <!--end::Table-->
                         </div>
                         <!--end::Body-->
                     </div>
@@ -710,29 +659,8 @@
 </div>
 @endsection
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>
-      jQuery(document).ready(function($) {
-
- $('#myCarousel').carousel({
-         interval: 5000
- });
-
- //Handles the carousel thumbnails
- $('[id^=carousel-selector-]').click(function () {
- var id_selector = $(this).attr("id");
- try {
-     var id = /-(\d+)$/.exec(id_selector)[1];
-     console.log(id_selector, id);
-     jQuery('#myCarousel').carousel(parseInt(id));
- } catch (e) {
-     console.log('Regex failed!', e);
- }
-});
- // When the carousel slides, auto update the text
- $('#myCarousel').on('slid.bs.carousel', function (e) {
-          var id = $('.item.active').data('slide-number');
-         $('#carousel-text').html($('#slide-content-'+id).html());
- });
-});
+    baguetteBox.run('.tz-gallery');
 </script>
 @endsection

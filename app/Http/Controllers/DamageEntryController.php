@@ -73,8 +73,12 @@ class DamageEntryController extends Controller
             abort(404);
         else:
             $roads = DamageEntry::with('roads')->selectRaw('COUNT(road_id) as total, road_id')->groupBy('road_id')->where('phone',$id)->orderBy('id','desc')->get()->take(5);
+            $reports = DamageEntry::with('roads','zones','locals','states')->where('images','<>','')->where('phone',$id)->get();
+            $users = DamageEntry::groupBy('phone')->where('phone',$id)->count();
+
         endif;
-        return view('dashboard.entries.single.index',compact('entries','roads'));
+        dd($users);
+        return view('dashboard.entries.single.index',compact('entries','roads','reports','users'));
     }
 
     /**

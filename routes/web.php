@@ -34,6 +34,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'sendtologin'], function 
     Route::group(['prefix' => 'roads'], function () {
         Route::get('/', 'RoadsController@general')->name('roads');
         Route::get('/{id}', 'RoadsController@single')->name('roads.single');
+        Route::post('/switch', 'RoadsController@switches')->name('roads.switches');
+
 
     });
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDamageStatusesTable extends Migration
+class CreateHealthsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateDamageStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('damage_statuses', function (Blueprint $table) {
+        Schema::create('healths', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('description');
-            $table->string('color_code');
-            $table->string('icon');
+            $table->string('rank');
+            $table->string('cap');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateDamageStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('damage_statuses');
+        Schema::dropIfExists('healths');
     }
 }

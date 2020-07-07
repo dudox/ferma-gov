@@ -14,38 +14,21 @@ class DamageStatusSeeder extends Seeder
     {
         DB::table('damage_statuses')->insert([
             [
-                'name' => 'URR',
+                'name' => 'Pending',
                 'description' => 'Damage Entry yet to be processed',
                 'color_code' => 'primary',
-                'cap'=>0,
                 'icon' => 'fa fa-circle',
             ],
             [
                 'name' => 'In Progress',
                 'description' => 'Damage Entry is been processed and repair is ongoing',
                 'color_code' => 'info',
-                'cap'=>0,
                 'icon' => 'fa fa-spaceship',
             ],
             [
                 'name' => 'Completed',
                 'description' => 'Damage Entry has been processed successfully',
                 'color_code' => 'success',
-                'cap'=>0,
-                'icon' => 'fa fa-check-2',
-            ],
-            [
-                'name' => 'Bad Health',
-                'description' => 'Damage Entry has been processed successfully',
-                'color_code' => 'warning',
-                'cap'=>0,
-                'icon' => 'fa fa-check-2',
-            ],
-            [
-                'name' => 'Critical Health',
-                'description' => 'Damage Entry has been processed successfully',
-                'color_code' => 'danger',
-                'cap'=>0,
                 'icon' => 'fa fa-check-2',
             ],
             // [

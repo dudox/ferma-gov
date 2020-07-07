@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             DamageEntriesSeeder::class,
             DamageScreensSeeder::class,
             GeoRegionsSeeder::class,
-            RoadSeeder::class
+            RoadSeeder::class,
+            HealthSeeder::class
         ]);
     }
 }

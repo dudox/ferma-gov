@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\DamageEntry;
+use App\DamageStatus;
 use App\GeoRegions;
+use App\Health;
 use App\Locals;
 use App\Road;
 use App\States;
@@ -82,10 +84,48 @@ class RoadsController extends Controller
     }
 
     public function single($id){
-        $road = Road::where('name',str_replace('_',' ',$id))->firstOrFail();
+        $road = Road::with('progress')->where('name',str_replace('_',' ',$id))->firstOrFail();
         $local = Locals::where('local_id',$road->local_id)->first();
         $state = States::where('state_id',$local->state_id)->first();
         $region = GeoRegions::where('id',$state->zone_id)->first();
-        return view('dashboard.roads.single.index',compact('road','local','state','region'));
+        $reports = DamageEntry::where('road_id',$road->id)->get();
+        $images = DamageEntry::where('road_id',$road->id)->where('images','<>','')->get();
+        $users = DamageEntry::orderBy('phone')->where('road_id',$road->id)->get();
+        $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->where('road_id',$road->id)->get();
+        $health = $this->health($road->id);
+        //dd($this->health($road->id));
+
+        return view('dashboard.roads.single.index',compact('road','local','state','region','reports','users','monthly','health','images'));
+    }
+
+    public function health($id){
+        $last = DamageStatus::where('id',3)->first();
+        $all = DamageEntry::where('created_at','>=',date('Y-m-d',strtotime($last->updated_at)))->where('road_id',$id)->get();
+        $health = Health::get();
+        $count = count($all);
+        $data = ['100','success','Excellent'];
+        if($count > 0){
+
+            foreach($health as $check){
+                if($count >= $check->cap){
+                    $data = [
+                        round( 100 - (($check->cap / $count) * 100)),
+                        $check->color,
+                        $check->name,
+                        $check->description
+                    ];
+                }
+            }
+        }
+
+        return $data;
+    }
+
+    public function switches(Request $request){
+        $road = Road::find($request->id);
+        $road->status = $request->status;
+        $road->save();
+        $status = DamageStatus::find($request->status);
+        return response()->json(['status'=>'success','message'=>'Construction status has been set to '.$status->name], 200);
     }
 }
