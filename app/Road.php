@@ -10,7 +10,7 @@ class Road extends Model
 
 
     public function local(){
-        return $this->hasMany(Locals::class);
+        return $this->hasOne(Locals::class,'local_id','local_id');
     }
 
     public function degree()

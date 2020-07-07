@@ -157,42 +157,28 @@
                     <!--begin: Search Form-->
                     <form class="kt-form kt-form--fit mb-15">
                         <div class="row mb-6">
-                            <div class="col-lg-4 mb-lg-0 mb-6">
+                            <div class="col-lg-3 mb-lg-0 mb-6">
                                 <label>Regions:</label>
                                 <select class="form-control datatable-input" data-col-index="1">
                                     <option value="">All</option>
                                 </select>
                             </div>
-                            <div class="col-lg-4 mb-lg-0 mb-6">
+                            <div class="col-lg-3 mb-lg-0 mb-6">
                                 <label>States:</label>
                                 <select class="form-control datatable-input" data-col-index="2">
                                     <option value="">All</option>
                                 </select>
                             </div>
-                            <div class="col-lg-4 mb-lg-0 mb-6">
+                            <div class="col-lg-3 mb-lg-0 mb-6">
                                 <label>Status:</label>
                                 <select class="form-control datatable-input" data-col-index="3">
                                     <option value="">All</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row mb-8">
-                            <div class="col-lg-6 mb-lg-0 mb-6">
-                                <label>Ship Date:</label>
-                                <div class="input-daterange input-group" id="kt_datepicker">
-                                    <input type="text" class="form-control datatable-input" name="start" placeholder="From" data-col-index="4">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-ellipsis-h"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" class="form-control datatable-input" name="end" placeholder="To" data-col-index="4">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-lg-0 mb-6">
-                                <label>Type:</label>
-                                <select class="form-control datatable-input" data-col-index="5">
-                                    <option value="">Select</option>
+                            <div class="col-lg-3 mb-lg-0 mb-6">
+                                <label>Road Health:</label>
+                                <select class="form-control datatable-input" data-col-index="4">
+                                    <option value="">All</option>
                                 </select>
                             </div>
                         </div>
@@ -221,9 +207,9 @@
                                 <th>Regions</th>
                                 <th>State</th>
                                 <th>Status</th>
-                                <th>Date</th>
-                                <th>Type</th>
+                                <th>Road Health</th>
                                 <th>LGA</th>
+                                <th></th>
                             </tr>
                         </thead>
 

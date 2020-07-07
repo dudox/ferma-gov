@@ -16,12 +16,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 },
                 searchDelay: 500,
                 processing: !0,
-                serverSide: !0,
+                serverSide: !1,
                 ajax: {
                     url:  "/api/datatables/roads",
                     type: "POST",
                     data: {
-                        columnsDef: ["Road","Regions", "State", "Status", "Date", "Type", "LGA"]
+                        columnsDef: ["Road","Regions", "State", "Status", "Type", "Road Health","Action"]
                     }
                 },
                 columns: [{
@@ -33,11 +33,12 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                 }, {
                     data: "Status"
                 }, {
-                    data: "Date"
-                }, {
-                    data: "Type"
+                    data: "Road Health"
                 }, {
                     data: "LGA"
+                },{
+                    data: "Actions",
+                    responsivePriority: -1
                 }],
 
                 initComplete: function() {
@@ -46,10 +47,19 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
 
                             case "Regions":
                                 this.data().unique().sort().each(function(t, a) {
-                                    console.log(t);
-                                    $('.datatable-input[data-col-index="1"]').append('<option value="' + t.name + '">' + t.name + "</option>")
+                                    $('.datatable-input[data-col-index="1"]').append('<option value="' + t + '">' + t + "</option>")
                                 });
                                 break;
+                            case "State":
+                                this.data().unique().sort().each(function(t, a) {
+                                    $('.datatable-input[data-col-index="2"]').append('<option value="' + t + '">' + t + "</option>")
+                                });
+                                break;
+                            case "Road Health":
+                                this.data().unique().sort().each(function(t, a) {
+                                    $('.datatable-input[data-col-index="4"]').append('<option value="' + t + '">' + t + "</option>")
+                                });
+                                    break;
                             case "Status":
                                 var t = {
                                     1: {
@@ -57,32 +67,16 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                                         class: "label-light-primary"
                                     },
                                     2: {
-                                        title: "Delivered",
-                                        class: " label-light-danger"
-                                    },
-                                    3: {
-                                        title: "Canceled",
-                                        class: " label-light-primary"
-                                    },
-                                    4: {
-                                        title: "Success",
-                                        class: " label-light-success"
-                                    },
-                                    5: {
-                                        title: "Info",
+                                        title: "In Progress",
                                         class: " label-light-info"
                                     },
-                                    6: {
-                                        title: "Danger",
-                                        class: " label-light-danger"
+                                    3: {
+                                        title: "Completed",
+                                        class: " label-light-success"
                                     },
-                                    7: {
-                                        title: "Warning",
-                                        class: " label-light-warning"
-                                    }
                                 };
                                 this.data().unique().sort().each(function(a, e) {
-                                    $('.datatable-input[data-col-index="6"]').append('<option value="' + a + '">' + t[a].title + "</option>")
+                                    $('.datatable-input[data-col-index="3"]').append('<option value="' + t[a].title + '">' + t[a].title + "</option>")
                                 });
                                 break;
                             case "Type":
@@ -99,12 +93,65 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                                         title: "Direct",
                                         state: "success"
                                     }
-                                }, this.data().unique().sort().each(function(a, e) {
-                                    $('.datatable-input[data-col-index="7"]').append('<option value="' + a + '">' + t[a].title + "</option>")
+                                },
+                                 this.data().unique().sort().each(function(a, e) {
+                                    //$('.datatable-input[data-col-index="7"]').append('<option value="' + a + '">' + t[a].title + "</option>")
                                 })
                         }
                     })
                 },
+                columnDefs: [{
+                    targets: -1,
+                    title: "Actions",
+                    orderable: !1,
+                    render: function(t, a, e, l) {
+                        return '\t\t\t\t\t\t\t<div class="dropdown dropdown-inline">\t\t\t\t\t\t\t\t<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">\t                                <i class="la la-cog"></i>\t                            </a>\t\t\t\t\t\t\t  \t<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">\t\t\t\t\t\t\t\t\t<ul class="nav nav-hoverable flex-column">\t\t\t\t\t\t\t    \t\t<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-edit"></i><span class="nav-text">Edit Details</span></a></li>\t\t\t\t\t\t\t    \t\t<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-leaf"></i><span class="nav-text">Update Status</span></a></li>\t\t\t\t\t\t\t    \t\t<li class="nav-item"><a class="nav-link" href="#"><i class="nav-icon la la-print"></i><span class="nav-text">Print</span></a></li>\t\t\t\t\t\t\t\t\t</ul>\t\t\t\t\t\t\t  \t</div>\t\t\t\t\t\t\t</div>\t\t\t\t\t\t\t<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Edit details">\t\t\t\t\t\t\t\t<i class="la la-edit"></i>\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t<a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="Delete">\t\t\t\t\t\t\t\t<i class="la la-trash"></i>\t\t\t\t\t\t\t</a>\t\t\t\t\t\t'
+                    }
+                }, {
+                    targets: 3,
+                    render: function(t, a, e, l) {
+                        var i = {
+                            1: {
+                                title: "Pending",
+                                class: "label-light-primary"
+                            },
+                            2: {
+                                title: "In Progress",
+                                class: " label-light-info"
+                            },
+                            3: {
+                                title: "Completed",
+                                class: " label-light-success"
+                            },
+                        };
+                        return void 0 === i[t] ? t : '<span class="label label-lg font-weight-bold' + i[t].class + ' label-inline">' + i[t].title + "</span>"
+                    }
+                },
+                {
+                    targets: 4,
+                    render: function(t, a, e, l) {
+                        var i = {
+                            'Excellent': {
+                                title: "Excellent",
+                                state: "success"
+                            },
+                            'Good': {
+                                title: "Good",
+                                state: "primary"
+                            },
+                            'Bad': {
+                                title: "Bad",
+                                state: "warning"
+                            },
+                            'Critical':{
+                                title: "Critical",
+                                state: "danger"
+                            }
+                        };
+                        return void 0 === i[t] ? t : '<span class="label label-' + i[t].state + ' label-dot mr-2"></span><span class="font-weight-bold text-' + i[t].state + '">' + i[t].title + "</span>"
+                    }
+                }
+            ]
             }), $("#kt_search").on("click", function(a) {
                 a.preventDefault();
                 var e = {};

@@ -74,13 +74,27 @@ class RoadsController extends Controller
 
     public function api(){
         $regions = GeoRegions::get();
-        $roads = Road::get();
+        $roads = Road::with('progress','local.state.region')->get();
+        $data = [];
+        foreach($roads as $road){
+            $data[] = [
+                "Road"=> $road->name,
+                "Regions"=> $road->local->state->region->zone,
+                "State"=> $road->local->state->name,
+                "Status"=> $road->status,
+                "Road Health"=> ucfirst($this->health($road->id)[2]),
+                "LGA"=>$road->local->local_name,
+                "Actions"=> null
+            ];
+        }
 
-        return response()->json(['data'=>
-            [
-                    1=>'Ahmed',2,3,4,5
-            ]
-        ], 200);
+        return  [
+            "iTotalRecords"=> count($data),
+            "iTotalDisplayRecords"=> count($data),
+            "sEcho"=> 0,
+            "aaData"=> $data
+
+        ];
     }
 
     public function single($id){
