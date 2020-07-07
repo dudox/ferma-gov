@@ -178,9 +178,6 @@ class Process extends Controller
                 $res .= $key." ".$road->name."\n";
             }
             return $this->con($res);
-        else:
-            $res = "There is no federal road accross this location\n\n";
-            return $this->end($res);
         endif;
     }
 
