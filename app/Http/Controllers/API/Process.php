@@ -56,7 +56,11 @@ class Process extends Controller
             'status' => 1,
             'identifier' => rand(111111111, 999999999),
         ]);
-        echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.");
+        if($this->text[6] == 1):
+            echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n You will a sms shortly.");
+        else:
+            echo $this->end("Thank you for reporting this road to FERMA. We will attend to it immediately.\n Report more.");
+        endif;
         die;
     }
 
@@ -171,7 +175,7 @@ class Process extends Controller
 
     public function getRoads($id){
         $roads = Road::where('local_id',$id)->get();
-        if($roads > 0):
+        if(count($roads) > 0):
             $res = "Please select the federal road you want to report\n\n";
             foreach($roads as $key => $road){
                 $key++;
