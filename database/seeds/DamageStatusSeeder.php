@@ -27,7 +27,7 @@ class DamageStatusSeeder extends Seeder
                 'icon' => 'fa fa-spaceship',
             ],
             [
-                'name' => 'Completed',
+                'name' => 'Fixed',
                 'description' => 'Damage Entry has been processed successfully',
                 'color_code' => 'success',
                 'icon' => 'fa fa-check-2',
