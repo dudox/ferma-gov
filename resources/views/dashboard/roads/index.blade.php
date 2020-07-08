@@ -56,7 +56,7 @@
                             <div class="card-title">
                                 <div class="card-label">
                                     <div class="font-weight-bolder">List of all roads in  {{$regions->states[0]->name}}</div>
-                                    <div class="font-size-sm text-muted mt-2">890,344 Sales</div>
+                                    {{-- <div class="font-size-sm text-muted mt-2">890,344 Sales</div> --}}
                                 </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                 <div class="card-body d-flex flex-column pb-2">
                                     <div class="flex-grow-1" style="position: relative;">
                                         <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div>
-                                        <p class="small pb-0 mb-0">Overall Percentile Over All States</p>
+                                        <p class="small pb-0 mb-0">Percentile of {{ $regions->states[0]->name }} with respect to all federal roads in Nigeria</p>
                                         <div id="percentage_reports_total" data-value="{{ json_encode($prt) }}"></div>
                                     </div>
                                     <div class="pt-0 px-0">
@@ -147,7 +147,7 @@
                                     <!--begin::Stats-->
                                     <div class="flex-grow-1">
                                         <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div>
-                                        <p class="small pb-0 mb-0">Overall Percentile Over Other States in {{ $regions->zone }}</p>
+                                        <p class="small pb-0 mb-0">Percentile of {{ $regions->states[0]->name }} with respect to all in federal roads in the {{ $regions->zone }} Region</p>
                                     </div>
 
                                    <div id="percentage_reports" data-value="{{ json_encode($prr) }}" class="pt-5 mb-0 pb-0" style=""></div>
@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <!--begin::Mixed Widget 20-->
-                    <div class="card card-custom bgi-no-repeat gutterb bg-primary">
+                    {{-- <div class="card card-custom bgi-no-repeat gutterb bg-primary">
                         <!--begin::Body-->
                         <div class="card-body d-flex align-items-center">
                             <div class="py-0">
@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <!--end::Body-->
-                    </div>
+                    </div> --}}
                     <!--end::Mixed Widget 20-->
                 </div>
                 <div class="col-xl-3">

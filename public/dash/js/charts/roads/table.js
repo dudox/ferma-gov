@@ -109,30 +109,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                         return void 0 === i[t] ? t : '<span class="label label-lg font-weight-bold' + i[t].class + ' label-inline">' + i[t].title + "</span>"
                     }
                 },
-                {
-                    targets: 4,
-                    render: function(t, a, e, l) {
-                        var i = {
-                            'Excellent': {
-                                title: "Excellent",
-                                state: "success"
-                            },
-                            'Good': {
-                                title: "Good",
-                                state: "primary"
-                            },
-                            'Bad': {
-                                title: "Bad",
-                                state: "warning"
-                            },
-                            'Critical':{
-                                title: "Critical",
-                                state: "danger"
-                            }
-                        };
-                        return void 0 === i[t] ? t : '<span class="label label-' + i[t].state + ' label-dot mr-2"></span><span class="font-weight-bold text-' + i[t].state + '">' + i[t].title + "</span>"
-                    }
-                }
+
             ]
             }), $("#kt_search").on("click", function(a) {
                 a.preventDefault();

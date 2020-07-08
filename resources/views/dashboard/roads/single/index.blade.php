@@ -3,7 +3,7 @@
 @section('title','Roads')
 @section('road_a','menu-item-here')
 @section('styles')
-    <link rel="stylesheet" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.5">
+    <link rel="stylesheet" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.6">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
@@ -157,23 +157,26 @@
                                         <a href="#" class="text-dark-50 text-hover-primary font-weight-bold">
                                         <i class="fa fa-globe mr-2 font-size-lg"></i><span class="text-primary"><u>Region:</u></span> {{ ucfirst($region->zone) }}</a>
                                     </div>
-                                    <div class="d-flex align-items-center w-100 flex-fill float-right mt-lg-12">
+                                    {{-- <div class="d-flex align-items-center w-100 flex-fill float-right mt-lg-12">
                                         <span class="font-weight-bold text-dark-75 w-25">Road Health</span>
                                         <div class="progress progress-xs  mx-3 w-100">
                                             <div class="progress-bar bg-{{ $health[1] }}" role="progressbar" style="width: {{$health[0]}}%" aria-valuenow="{{$health[0]}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <span class="font-weight-bold text-dark-75 w-50">{{$health[0]}}%</span>
                                     </div>
-                                    <span>Analysis above shows the heath status of <span class="font-weight-bold">{{ ucfirst($road->name) }}</span> Rd based on the number of reports <br>within a specific period of time has <span class="font-weight-bolder text-{{ $health[1] }}">{{ ucfirst($health[2]) }}</span></span>
+                                    <span>Analysis above shows the heath status of <span class="font-weight-bold">{{ ucfirst($road->name) }}</span> Rd based on the number of reports <br>within a specific period of time has <span class="font-weight-bolder text-{{ $health[1] }}">{{ ucfirst($health[2]) }}</span></span> --}}
+                                    <div class="d-flex align-items-center w-25 flex-fill float-right mt-lg-12 mt-8">
+                                        <span class="font-weight-bold text-dark-75">Progress</span>
+                                        <div class="progress progress-xs mx-3 w-100">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 63%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="font-weight-bolder text-dark">78%</span>
+                                    </div>
+                                    <span>Analysis above shows the heath status of <span class="font-weight-bold">{{ ucfirst($road->name) }}</span> Rd based on the number of reports <br>within a specific period of time has <span class="font-weight-bolder text-"></span></span>
+
                                 </div>
 
-                                <div class="d-flex align-items-center w-25 flex-fill float-right mt-lg-12 mt-8">
-                                    <span class="font-weight-bold text-dark-75">Progress</span>
-                                    <div class="progress progress-xs mx-3 w-100">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 63%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <span class="font-weight-bolder text-dark">78%</span>
-                                </div>
+
                             </div>
                             <!--end::Content-->
                         </div>
@@ -196,12 +199,12 @@
                         </div>
                         <div class="d-flex align-items-center flex-lg-fill mr-5 mb-2">
                             <span class="mr-4">
-                                <i class="fa fa-heart display-4  font-weight-bold"></i>
+                                <i class="fa fa-bell display-4  font-weight-bold"></i>
                             </span>
                             <div class="d-flex flex-column text-dark-75">
-                                <span class="font-weight-bolder font-size-sm">Road Health</span>
+                                <span class="font-weight-bolder font-size-sm">Reports after last repair</span>
                                 <span class="font-weight-bolder font-size-h5">
-                                    <span class="label label-lg label-light-{{ $health[1]}} label-inline font-weight-bold">{{ ucfirst($health[2]) }}</span></span>
+                                    <span class="label label-lg label-light- label-inline font-weight-bold">{{ count($health) }}</span></span>
                             </div>
                         </div>
                         <div class="d-flex align-items-center flex-lg-fill mr-5 mb-2">
@@ -263,7 +266,7 @@
                         <!--begin::Body-->
                         <div class="card-body pt-3 pb-0">
                             <!--begin::Table-->
-                            <div class="table-responsive">
+                            <div class="py-2">
                                 <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important" data-local="{{ json_encode($road->local_id) }}" data-road="{{ json_encode($road->id) }}">
                                     <thead>
                                         <tr>
@@ -420,7 +423,9 @@
                                                 </a>
                                             </div>
                                         @endforeach
-                                        <a href="" class="font-weight-bolder pt-2">View all images</a>
+                                        <div class="col-12 py-3">
+                                            <a href="" class="font-weight-bolder pt-2 btn btn-block btn-light">View all photos</a>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -480,7 +485,7 @@
 
 @endsection
 @section('scripts')
-    <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
+    <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script src="{{ asset('dash/js/charts/roads/single.js') }}"></script>
 @endsection

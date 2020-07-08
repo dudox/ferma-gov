@@ -1,5 +1,6 @@
 <?php
 
+use App\DamageStatus;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class DamageStatusSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('damage_statuses')->insert([
+        $statuses = [
             [
                 'name' => 'Pending',
                 'description' => 'Damage Entry yet to be processed',
@@ -37,6 +38,10 @@ class DamageStatusSeeder extends Seeder
             //     'color_code' => 'text-danger',
             //     'icon' => 'nc nc-simple-remove',
             // ],
-        ]);
+        ];
+
+        foreach($statuses as $status){
+            DamageStatus::create($status);
+        }
     }
 }

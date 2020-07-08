@@ -102,11 +102,11 @@ class RoadsController extends Controller
         $data = [];
         foreach($roads as $road){
             $data[] = [
-                "Road"=> $road->name,
+                "Road"=> ucfirst($road->name),
                 "Regions"=> $road->local->state->region->zone,
                 "State"=> $road->local->state->name,
                 "Status"=> $road->status,
-                "Road Health"=> ucfirst($this->health($road->id)[2]),
+                "Road Health"=> count($this->health($road->id)),
                 "LGA"=>$road->local->local_name,
                 "Actions"=> route('roads.single',['local'=>$road->local_id,'road'=>str_replace(' ','_',$road->name)])
             ];
@@ -127,7 +127,7 @@ class RoadsController extends Controller
         $state = States::where('state_id',$local->state_id)->first();
         $region = GeoRegions::where('id',$state->zone_id)->first();
         $reports = DamageEntry::where('road_id',$road->id)->get();
-        $images = DamageEntry::where('road_id',$road->id)->where('images','<>','')->orderBy('id','desc')->paginate(9);
+        $images = DamageEntry::where('road_id',$road->id)->where('images','<>',null)->orderBy('id','desc')->paginate(9);
         $users = DamageEntry::orderBy('phone')->where('road_id',$road->id)->get();
         $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->where('road_id',$road->id)->get();
         $health = $this->health($road->id);
@@ -137,26 +137,27 @@ class RoadsController extends Controller
     }
 
     public function health($id){
-        $last = DamageStatus::where('id',3)->first();
-        $all = DamageEntry::where('created_at','>=',date('Y-m-d',strtotime($last->updated_at)))->where('road_id',$id)->get();
-        $health = Health::get();
-        $count = count($all);
-        $data = ['100','success','Excellent'];
-        if($count > 0){
+        $last = DamageStatus::where('id',3)->where('name','Fixed')->first();
+        return DamageEntry::whereDate('created_at','>=',$last->updated_at)->where('road_id',$id)->get();
 
-            foreach($health as $check){
-                if($count >= $check->cap){
-                    $data = [
-                        round( 100 - (($check->cap / $count) * 100)),
-                        $check->color,
-                        $check->name,
-                        $check->description
-                    ];
-                }
-            }
-        }
+        // $health = Health::get();
+        // $count = count($all);
+        // $data = ['100','success','Excellent'];
+        // if($count > 0){
 
-        return $data;
+        //     foreach($health as $check){
+        //         if($count >= $check->cap){
+        //             $data = [
+        //                 round( 100 - (($check->cap / $count) * 100)),
+        //                 $check->color,
+        //                 $check->name,
+        //                 $check->description
+        //             ];
+        //         }
+        //     }
+        // }
+
+        // return $data;
     }
 
     public function switches(Request $request){
