@@ -19,7 +19,7 @@
     <link href="{{asset('dash/css/bootstrap.min.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dash/css/prismjs.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('dash/css/ferma-dashboard.css?v=7.0.5')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('dash/css/datatables.css') }}">
+    <link rel="stylesheet" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.6">
 
     @yield('styles')
 
@@ -657,9 +657,10 @@
     <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/plugins/global/plugins.bundle.js?v=7.0.6"></script>
     <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
     <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/js/scripts.bundle.js?v=7.0.6"></script>
-    <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js?v=7.0.5"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
     {{-- //<script src="{{asset('dash/js/datatables.js')}}"></script> --}}
+    <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
+
     <script>
        $(function(){
             new WOW().init();

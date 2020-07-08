@@ -2,7 +2,6 @@
 @section('entery_a','menu-item-here')
 @section('title','Entries')
 @section('styles')
-<link rel="stylesheet" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.5">
 
 @endsection
 @section('content')
@@ -265,6 +264,5 @@
 </div>
 @endsection
 @section('scripts')
-<script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
 <script src="{{ asset('dash/js/charts/entries/index.js') }}"></script>
 @endsection

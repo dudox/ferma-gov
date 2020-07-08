@@ -123,7 +123,7 @@
 
                                 <div class="card-body d-flex flex-column pb-2">
                                     <div class="flex-grow-1" style="position: relative;">
-                                        <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div>
+                                        {{-- <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div> --}}
                                         <p class="small pb-0 mb-0">Percentile of {{ $regions->states[0]->name }} with respect to all federal roads in Nigeria</p>
                                         <div id="percentage_reports_total" data-value="{{ json_encode($prt) }}"></div>
                                     </div>
@@ -146,8 +146,8 @@
                                 <div class="card-body d-flex flex-column">
                                     <!--begin::Stats-->
                                     <div class="flex-grow-1">
-                                        <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div>
-                                        <p class="small pb-0 mb-0">Percentile of {{ $regions->states[0]->name }} with respect to all in federal roads in the {{ $regions->zone }} Region</p>
+                                        {{-- <div class="text-dark-50 font-weight-bold">{{ $regions->states[0]->name }} Percentile Reports</div> --}}
+                                        <p class="small pb-0 mb-0">Percentile of {{ $regions->states[0]->name }} with respect to all federal roads in the {{ $regions->zone }} Region</p>
                                     </div>
 
                                    <div id="percentage_reports" data-value="{{ json_encode($prr) }}" class="pt-5 mb-0 pb-0" style=""></div>

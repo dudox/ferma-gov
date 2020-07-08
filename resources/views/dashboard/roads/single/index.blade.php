@@ -3,7 +3,6 @@
 @section('title','Roads')
 @section('road_a','menu-item-here')
 @section('styles')
-    <link rel="stylesheet" href="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.css?v=7.0.6">
     <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
@@ -485,7 +484,6 @@
 
 @endsection
 @section('scripts')
-    <script src="https://keenthemes.com/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script src="{{ asset('dash/js/charts/roads/single.js') }}"></script>
 @endsection
