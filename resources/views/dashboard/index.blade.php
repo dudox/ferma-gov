@@ -172,8 +172,8 @@
 
                                         <!--begin::Text-->
                                         <div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">
-                                            <span class="font-weight-bolder text-link  d-block small"><i class="fa fa-sm fa-user"></i> {{$entry->phone}}</span>
-                                            <span class="font-weight-bolder text-dark-75 small">{{ucfirst($entry->roads->name)}}, {{$entry->states->name}}</span>
+                                            <span class="font-weight-bolder text-link  d-block small"><a href="{{ route('entries.show',$entry->phone) }}"><i class="fa fa-sm fa-user"></i> {{$entry->phone}}</a></span>
+                                            <span class="font-weight-bolder text-dark-75 small"><a class="text-dark" href="{{ route('roads.single',['local'=>$entry->local_id,'road'=>str_replace(' ','_',$entry->roads->name)]) }}">{{ucfirst($entry->roads->name)}}, {{$entry->states->name}}</a></span>
                                             <span class="small d-block">{{$entry->roads->progress->description}}</span>
                                         </div>
                                         <!--end::Text-->
@@ -379,7 +379,7 @@
                                                 </div>
                                             </td>
                                             <td class="pl-0">
-                                                <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 badge badge-sm py-0">{{ucfirst($item->roads->name)}}</a>
+                                                <a href="{{ route('roads.single',['local'=>$item->local_id,'road'=>str_replace(' ','_',$item->roads->name)]) }}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 badge badge-sm py-0">{{ucfirst($item->roads->name)}}</a>
                                                 <div>
                                                     <span class="font-weight-bolder badge">{{$item->states->name}}:</span>
                                                     <a class="text-primary text-hover-primary badge badge-white badge-sm badge-pill small" href="{{ route('regions.single',str_replace(' ','_',$item->zones->zone)) }}"><u>{{$item->zones->zone}}</u></a>
@@ -399,7 +399,7 @@
                                                 <span class="label label-sm label-light-{{$item->roads->progress->color_code}} label-inline">{{$item->roads->progress->name}}</span>
                                             </td>
                                             <td class="text-right pr-0">
-                                                <a href="#" class="btn btn-icon btn-light btn-hover-primary btn-sm">
+                                                <a href="{{ route('roads.single',['local'=>$item->local_id,'road'=>str_replace(' ','_',$item->roads->name)]) }}" class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                                     <span class="svg-icon svg-icon-md svg-icon-primary">
                                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

@@ -68,7 +68,7 @@ class Dashboard extends Controller
     }
 
     public function list_reported_road_order(){
-        return DamageEntry::selectRaw('COUNT(*) as total, road_id, state_id, zone_id')->with(['roads.progress' => function($query) {
+        return DamageEntry::selectRaw('COUNT(*) as total, road_id, state_id, zone_id, local_id')->with(['roads.progress' => function($query) {
             $query->select('id', 'name','description','color_code');
         },
         'states'=> function($query){
