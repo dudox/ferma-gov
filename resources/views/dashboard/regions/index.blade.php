@@ -254,7 +254,7 @@
                                 </div>
                                 <div class="row align-items-center mr-4">
                                     <span class="font-weight-bold col-12 px-0 small">
-                                        Completed Rd.
+                                        Fixed Rd.
                                     </span>
                                     <span class="btn btn-light-primary btn-sm font-weight-bold btn-upper btn-text btn-block mr-2">
                                         @foreach ($region->states as $key => $item)
@@ -267,7 +267,7 @@
                                 </div>
                                 <div class="row align-items-center mr-4">
                                     <span class="font-weight-bold col-12 px-0 small">
-                                        Ongoing Rd
+                                        WIP Rd
                                     </span>
                                     <span class="btn btn-light-info btn-sm font-weight-bold btn-upper btn-text btn-block">
                                         @foreach ($region->states as $key => $item)

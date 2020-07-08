@@ -99,7 +99,7 @@
             <div class="d-flex align-items-center flex-wrap mr-1">
                 <!--begin::Page Heading-->
                 <div class="d-flex align-items-baseline flex-wrap mr-5">
-                    <h5 class="text-dark font-weight-bold my-1 mr-5">Roads</h5>
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">Federal Road</h5>
                     <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
                         <li class="breadcrumb-item">
                             <a href="" class="text-muted">{{$road->name}}</a>
@@ -264,48 +264,18 @@
                         <div class="card-body pt-3 pb-0">
                             <!--begin::Table-->
                             <div class="table-responsive">
-                                <table class="table table-borderless table-vertical-center">
+                                <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important" data-local="{{ json_encode($road->local_id) }}" data-road="{{ json_encode($road->id) }}">
                                     <thead>
                                         <tr>
-                                            <th class="p-0" style="width: 50px"></th>
-                                            <th class="p-0" style="min-width: 200px"></th>
-                                            <th class="p-0" style="min-width: 100px"></th>
-                                            <th class="p-0" style="min-width: 110px"></th>
-                                            <th class="p-0" style="min-width: 150px"></th>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Region</th>
+                                            <th>State</th>
+                                            <th>Road</th>
+                                            <th>Lacal Govt</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($reports as $item)
-                                        <tr>
-                                            <td class="pl-0 py-2">
-                                                <div class="symbol symbol-50 symbol-light mr-1">
-                                                    <span class="symbol-label">
-                                                        <img src="{{ asset($item->images) }}" class="h-50 align-self-center" alt="">
-                                                    </span>
-                                                </div>
-                                            </td>
-                                            <td class="pl-0">
-                                                <a href="#" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">{{ $item->name }}</a>
-                                                <div>
-                                                    <span class="font-weight-bolder">Phone:</span>
-                                                    <a class="text-muted font-weight-bold text-hover-primary" href="#">{{ $item->phone }}</a>
-                                                </div>
-                                            </td>
-                                            <td class="text-right">
-                                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">{{ $item->zones->zone }}</span>
-                                                <span class="text-muted font-weight-bold">{{$item->states->name}}</span>
-                                            </td>
-
-                                            <td class="text-right">
-                                                <span class="label label-lg label-light-primary label-inline">{{ ucfirst($item->locals->local_name) }}</span>
-                                            </td>
-                                            <td class="text-right pr-0">
-                                                <span class="label label-lg label-light-primary label-inline">{{ date('d M, Y', strtotime($item->created_at)) }}</span>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-
-                                    </tbody>
                                 </table>
                             </div>
                             <!--end::Table-->
@@ -450,6 +420,7 @@
                                                 </a>
                                             </div>
                                         @endforeach
+                                        <a href="" class="font-weight-bolder pt-2">View all images</a>
                                     </div>
 
                                 </div>
@@ -509,169 +480,7 @@
 
 @endsection
 @section('scripts')
-    <script>
-        var t = document.getElementById("kt_charts_widget_4_chart");
-        let arr = JSON.parse(t.dataset.chart);
-        let data = [];
-        let date = [];
-        if (t) {
-            arr.forEach(function(e){
-            data.push(e.total);
-            date.push(this.monthName(e.month));
-        });
-            var e = {
-                series: [{
-                    name: "Reports",
-                    data: data
-                }],
-                chart: {
-                    type: "area",
-                    height: 350,
-                    toolbar: {
-                        show: !1
-                    }
-                },
-                plotOptions: {},
-                legend: {
-                    show: !1
-                },
-                dataLabels: {
-                    enabled: !1
-                },
-                fill: {
-                    type: "solid",
-                    opacity: 1
-                },
-                stroke: {
-                    curve: "smooth"
-                },
-                xaxis: {
-                    categories: date,
-                    axisBorder: {
-                        show: !1
-                    },
-                    axisTicks: {
-                        show: !1
-                    },
-                    labels: {
-                        style: {
-                            //colors: KTApp.getSettings().colors.gray["gray-500"],
-                            fontSize: "12px",
-                            fontFamily: KTApp.getSettings()["font-family"]
-                        }
-                    },
-                    crosshairs: {
-                        position: "front",
-                        stroke: {
-                            //color: KTApp.getSettings().colors.theme.light.success,
-                            width: 1,
-                            dashArray: 3
-                        }
-                    },
-                    tooltip: {
-                        enabled: !0,
-                        formatter: void 0,
-                        offsetY: 0,
-                        style: {
-                            fontSize: "12px",
-                            fontFamily: KTApp.getSettings()["font-family"]
-                        }
-                    }
-                },
-                yaxis: {
-                    labels: {
-                        style: {
-                            //colors: KTApp.getSettings().colors.gray["gray-500"],
-                            fontSize: "12px",
-                            fontFamily: KTApp.getSettings()["font-family"]
-                        }
-                    }
-                },
-                states: {
-                    normal: {
-                        filter: {
-                            type: "none",
-                            value: 0
-                        }
-                    },
-                    hover: {
-                        filter: {
-                            type: "none",
-                            value: 0
-                        }
-                    },
-                    active: {
-                        allowMultipleDataPointsSelection: !1,
-                        filter: {
-                            type: "none",
-                            value: 0
-                        }
-                    }
-                },
-                tooltip: {
-                    style: {
-                        fontSize: "12px",
-                        fontFamily: KTApp.getSettings()["font-family"]
-                    },
-                    y: {
-                        formatter: function(t) {
-                            return  t + " Reports"
-                        }
-                    }
-                },
-                //colors: [KTApp.getSettings().colors.theme.base.success, KTApp.getSettings().colors.theme.base.warning],
-                grid: {
-                    //borderColor: KTApp.getSettings().colors.gray["gray-200"],
-                    strokeDashArray: 4,
-                    yaxis: {
-                        lines: {
-                            show: !0
-                        }
-                    }
-                },
-                markers: {
-                    //colors: [KTApp.getSettings().colors.theme.light.success, KTApp.getSettings().colors.theme.light.warning],
-                    //strokeColor: [KTApp.getSettings().colors.theme.light.success, KTApp.getSettings().colors.theme.light.warning],
-                    strokeWidth: 3
-                }
-            };
-            new ApexCharts(t, e).render()
-        }
-
-        function monthName(mon) {
-            return ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December'][mon - 1];
-        }
-    </script>
+    <script src="https://keenthemes.com/metronic/themes/metronic/theme/html/demo9/dist/assets/plugins/custom/datatables/datatables.bundle.js?v=7.0.5"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script>
-        baguetteBox.run('.tz-gallery');
-        $('.select').on('change', function() {
-            $('.select').not(this).prop('checked', false);
-            let data = {};
-            data.status =  $(this).val();
-            data.id = $(this).data('id');
-            $.ajax({
-                type: 'POST',
-                url: 'switch',
-                data: data,
-                success: function(tx){
-                    $('.responseMessage').html(`
-                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <strong>${tx.status}!</strong> ${tx.message}.
-                    </div>
-                    `);
-
-                    $(".responseMessage").fadeTo(2000, 500).slideUp(500, function(){
-                        $(".alert").slideUp(500);
-                    });
-                }
-            })
-        });
-    </script>
-
-
+    <script src="{{ asset('dash/js/charts/roads/single.js') }}"></script>
 @endsection

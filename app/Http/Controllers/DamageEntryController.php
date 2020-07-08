@@ -15,10 +15,10 @@ class DamageEntryController extends Controller
      */
     public function index()
     {
-        $entries = DamageEntry::with('roads','states','locals','zones')->groupBy('phone')->orderBy('created_at', 'DESC')->paginate(20);
+        $entries = DamageEntry::with('roads','states','locals','zones')->groupBy('phone')->orderBy('created_at', 'DESC')->get();
         $mostActive = DamageEntry::selectRaw('count(phone) as phone_count, name, phone')->groupBy('phone')->orderBy('phone_count','desc')->get()->take(5);
         $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->get();
-        $daily = DamageEntry::where('created_at',Carbon::today())->count();
+        $daily = DamageEntry::whereDate('created_at',Carbon::today())->count();
         $now = Carbon::now();
         $percent = $this->perentage();
         $unique = $this->unique();
@@ -28,15 +28,40 @@ class DamageEntryController extends Controller
 
     public function perentage(){
         $all = DamageEntry::count();
-        $top = DamageEntry::with('roads')->selectRaw('count(road_id) as total, road_id')->groupBy('road_id')->orderBy('total','desc')->first();
+        $top = DamageEntry::with('roads')->selectRaw('count(road_id) as total, road_id, local_id')->groupBy('road_id')->orderBy('total','desc')->first();
         return  [
             'total'=>round(($top->total / $all)  * 100),
-            'name'=>$top->roads->name
+            'name'=>$top->roads->name,
+            'local'=>$top->local_id
         ];
     }
 
     public function unique(){
-        return DamageEntry::groupBy('road_id')->count();
+        return DamageEntry::groupBy('road_id')->get();
+    }
+
+    public function api(){
+
+        $entries = DamageEntry::with('roads','states','locals','zones')->groupBy('phone')->orderBy('created_at', 'DESC')->get();
+        $data = [];
+        $count =1;
+        foreach($entries as $entry){
+            $data[] = [
+                "ID"=> $count++,
+                "Name"=> [ucfirst($entry->name),$entry->phone],
+                "Region"=> $entry->zones->zone,
+                "State"=> $entry->states->name,
+                "Local Govt"=> $entry->locals->local_name,
+                "Road"=> $entry->roads->name,
+                "Date"=> date("d M, Y", strtotime($entry->created_at)),
+            ];
+        }
+
+
+        return [
+
+            "aaData"=> $data
+        ];
     }
 
     /**
@@ -77,7 +102,7 @@ class DamageEntryController extends Controller
             $users = DamageEntry::groupBy('phone')->where('phone',$id)->count();
 
         endif;
-        dd($users);
+        //dd($users);
         return view('dashboard.entries.single.index',compact('entries','roads','reports','users'));
     }
 

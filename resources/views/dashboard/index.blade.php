@@ -24,11 +24,11 @@
                         <div class="card-body p-0 position-relative overflow-hidden">
                             <!--begin::Chart-->
                             <div id="reports_chart" data-chart="{{ json_encode($reports_zone) }}"></div>
-                            <div id="kt_mixed_widget_2_chart" class="card-rounded-bottom bg-primary" style="height: 200px"></div>
+                            <div id="kt_mixed_widget_2_chart" class="card-rounded-bottom bg-primary p-0" style="height: 200px"></div>
                             <!--end::Chart-->
 
                             <!--begin::Stats-->
-                            <div class="card-spacer mt-n25">
+                            <div class="card-spacer ">
                                 <!--begin::Row-->
                                 <div class="row m-0">
                                     <div class="col bg-white px-6 py-8 rounded-xl mr-7 mb-7">
@@ -42,9 +42,9 @@
                                                     <rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
                                                 </g>
                                             </svg>
-                                           <span class="font-weight-bolder h5 float-right" style="font-size: 20px !important;">{{count($entry_overall->where('status',1))}}</span>
+                                           <span class="font-weight-bolder h5 float-right" style="font-size: 20px !important;">{{count($unique)}}</span>
                                         </span> <a href="#" class="text-warning font-weight-bold">
-                                            UR Roads
+                                            URR
                                         </a>
                                     </div>
                                     <div class="col bg-white px-6 py-8 rounded-xl mb-7">
@@ -80,7 +80,7 @@
                                             </svg>
                                            <span class="font-weight-bolder h5 float-right" style="font-size: 20px !important;">{{count($entry_overall->where('status',3))}}</span>
                                         </span> <a href="#" class="text-success font-weight-bold">
-                                            Completed Roads
+                                            Fixed Roads
                                         </a>
                                     </div>
                                     <div class="col bg-white px-6 py-8 rounded-xl mb-7">
@@ -141,7 +141,7 @@
                                     <span class="text-muted">Road status indicators<br/></span>
                                     <i class="fa fa-sm fa-road text-warning icon-xl"></i> UR&nbsp;
                                     <i class="fa fa-sm fa-road text-info icon-xl"></i> WIP&nbsp;
-                                    <i class="fa fa-sm fa-road text-success icon-xl"></i> Completed
+                                    <i class="fa fa-sm fa-road text-success icon-xl"></i> Fixed
                                 </span>
                             </h3>
 

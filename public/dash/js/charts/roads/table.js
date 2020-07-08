@@ -71,7 +71,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                                         class: " label-light-info"
                                     },
                                     3: {
-                                        title: "Completed",
+                                        title: "Fixed",
                                         class: " label-light-success"
                                     },
                                 };
@@ -102,7 +102,7 @@ var KTDatatablesSearchOptionsAdvancedSearch = function() {
                                 class: " label-light-info"
                             },
                             3: {
-                                title: "Completed",
+                                title: "Fixed",
                                 class: " label-light-success"
                             },
                         };

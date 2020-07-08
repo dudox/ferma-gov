@@ -24,6 +24,7 @@ class Dashboard extends Controller
         $roads_prior = $this->list_reported_road_order();
         $reports_zone = $this->get_zone_reports();
         $users = $this->list_administrator();
+        $unique = DamageEntry::groupBy('road_id')->get();
 
         return view('dashboard.index',compact(
             'entry_overall',
@@ -33,7 +34,8 @@ class Dashboard extends Controller
             'total_reports',
             'roads_prior',
             'reports_zone',
-            'users'));
+            'users',
+            'unique'));
     }
 
     function list_geo_zones(){
@@ -56,8 +58,8 @@ class Dashboard extends Controller
 
         return array(
             [$pending,"warning","Pending"],
-            [$ongoing,"info","Ongoing"],
-            [$completed,"danger","Completed"],
+            [$ongoing,"info","In Progress"],
+            [$completed,"danger","Fixed"],
         );
     }
 

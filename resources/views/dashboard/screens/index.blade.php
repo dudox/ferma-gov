@@ -39,7 +39,7 @@
                                     <span class="nav-text font-size-lg">Screens</span>
                                 </a>
                             </li>
-                            <li class="nav-item mr-3">
+                            {{-- <li class="nav-item mr-3">
                                 <a class="nav-link" data-toggle="tab" href="#kt_user_edit_tab_2">
                                   <span class="navi-icon mr-4">
                                     <span class="svg-icon svg-icon-lg">
@@ -55,7 +55,7 @@
                                   </span>
                                     <span class="nav-text font-size-lg">@Override Limits</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane px-7" id="kt_user_edit_tab_2" role="tabpanel">
+                        {{-- <div class="tab-pane px-7" id="kt_user_edit_tab_2" role="tabpanel">
                             <!--begin::Row-->
                             <form class="form" method="post" action="{{ route('override.update') }}" id="kt_form">
                                 @csrf
@@ -151,7 +151,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

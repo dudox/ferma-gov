@@ -72,6 +72,30 @@ class RoadsController extends Controller
         return view('dashboard.roads.general.index');
     }
 
+    public function entries(){
+        $entries = DamageEntry::with('roads','states','locals','zones')
+        ->orderBy('created_at', 'DESC')
+        ->where('local_id',request()->local)->where('road_id',request()->road)->get();
+        $data = [];
+        $count =1;
+        foreach($entries as $entry){
+            $data[] = [
+                "ID"=> $count++,
+                "Name"=> [ucfirst($entry->name),$entry->phone,route('entries.show',$entry->phone)],
+                "Region"=> $entry->zones->zone,
+                "State"=> $entry->states->name,
+                "Local Govt"=> $entry->locals->local_name,
+                "Road"=> $entry->roads->name,
+                "Date"=> date("d M, Y", strtotime($entry->created_at)),
+            ];
+        }
+
+        return [
+
+            "aaData"=> $data
+        ];
+    }
+
     public function api(){
         $regions = GeoRegions::get();
         $roads = Road::with('progress','local.state.region')->get();
@@ -103,7 +127,7 @@ class RoadsController extends Controller
         $state = States::where('state_id',$local->state_id)->first();
         $region = GeoRegions::where('id',$state->zone_id)->first();
         $reports = DamageEntry::where('road_id',$road->id)->get();
-        $images = DamageEntry::where('road_id',$road->id)->where('images','<>','')->get();
+        $images = DamageEntry::where('road_id',$road->id)->where('images','<>','')->orderBy('id','desc')->paginate(9);
         $users = DamageEntry::orderBy('phone')->where('road_id',$road->id)->get();
         $monthly = DamageEntry::selectRaw('count(*) as total, DATE_FORMAT(created_at, "%m-%Y") as new_date, YEAR(created_at) as year, MONTH(created_at) as month')->groupBy('month','year')->orderBy('month','asc')->where('road_id',$road->id)->get();
         $health = $this->health($road->id);

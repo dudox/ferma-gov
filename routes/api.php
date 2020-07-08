@@ -19,5 +19,8 @@ Route::post('/user/logs', 'LogsController@logs')->name('logs');
 Route::post('/user/profiles', 'RegisterController@profiles')->name('profiles');
 
 Route::post('/datatables/roads','RoadsController@api');
+Route::post('/datatables/roads/single','RoadsController@entries');
+Route::post('/datatables/entries','DamageEntryController@api');
+
 
 

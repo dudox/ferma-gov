@@ -10,16 +10,16 @@
                     }],
                     chart: {
                         type: "area",
-                        height: e,
+                        height: 200,
                         toolbar: {
                             show: !1
                         },
                         zoom: {
-                            enabled: !1
+                            enabled: 1
                         },
-                        sparkline: {
-                            enabled: !0
-                        },
+                        // sparkline: {
+                        //     enabled: !0
+                        // },
                         dropShadow: {
                             enabled: !0,
                             enabledOnSeries: void 0,
@@ -39,7 +39,7 @@
                     },
                     fill: {
                         type: "solid",
-                        opacity: 0
+                        opacity: 1
                     },
                     stroke: {
                         curve: "smooth",
@@ -48,39 +48,8 @@
                         colors: ["#287ED7"]
                     },
                     xaxis: {
-                        categories: ["North Central", "North East", "North West", "South East", "South South", "South West"],
-                        axisBorder: {
-                            show: 1
-                        },
-                        axisTicks: {
-                            show: 1
-                        },
-                        labels: {
-                            show: 1,
-                            style: {
-                               // colors: KTApp.getSettings().colors.gray["gray-500"],
-                                fontSize: "12px",
-                                fontFamily: KTApp.getSettings()["font-family"]
-                            }
-                        },
-                        crosshairs: {
-                            show: 1,
-                            position: "front",
-                            stroke: {
-                               // color: KTApp.getSettings().colors.gray["gray-300"],
-                                width: 1,
-                                dashArray: 3
-                            }
-                        },
-                        tooltip: {
-                            enabled: !0,
-                            formatter: void 0,
-                            offsetY: 0,
-                            style: {
-                                fontSize: "12px",
-                                fontFamily: KTApp.getSettings()["font-family"]
-                            }
-                        }
+                        categories: ["NC", "NE", "NW", "SE", "SS", "SW"],
+
                     },
                     yaxis: {
                         labels: {
@@ -192,7 +161,7 @@
                         stroke: {
                             lineCap: "round"
                         },
-                        labels: ["Pending Roads","Ongoing Roads","Completed Roads"]
+                        labels: ["Pending Roads","Ongoing Roads","Fixed Roads"]
                     };
                     new ApexCharts(t, o).render()
                 }
